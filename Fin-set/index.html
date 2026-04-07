@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fin-set.cz | Finanční poradenství pro podnikatele</title>
+<meta name="description" content="Nezávislé finanční poradenství pro podnikatele. Firemní úvěry, projektové financování, refinancování. Brno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FinancialService","name":"fin-set.cz","description":"Finanční poradenství pro podnikatele","telephone":"+420775939596","email":"info@fin-set.cz","url":"https://fin-set.cz","address":{"@type":"PostalAddress","addressLocality":"Brno","addressCountry":"CZ"},"founder":[{"@type":"Person","name":"Jan Klusák"},{"@type":"Person","name":"David Sedláček"}]}
+</script>
+<style>
+:root {
+  --bg-dark: #080E1C;
+  --bg-surface: #0D1526;
+  --bg-card: #111B33;
+  --bg-light: #F7F9FF;
+  --accent-blue: #2563EB;
+  --accent-blue-hover: #1D4ED8;
+  --accent-gold: #D97706;
+  --accent-gold-light: #F59E0B;
+  --text-on-dark: #FFFFFF;
+  --text-muted-dark: rgba(255,255,255,0.55);
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+  --border: rgba(0,0,0,0.08);
+  --border-dark: rgba(255,255,255,0.08);
+  --card-bg: #FFFFFF;
+  --font-heading: 'Fraunces', 'Times New Roman', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --nav-height: 72px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 32px rgba(0,0,0,0.18);
+  --shadow-card-dark: 0 4px 32px rgba(0,0,0,0.5);
+  --transition-fast: 150ms ease;
+  --transition-mid: 300ms ease;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg-dark);color:var(--text-on-dark);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-feature-settings:'ss01','cv11','ss03';font-optical-sizing:auto;letter-spacing:-.01em}
+h1,h2,h3,h4,h5{font-family:var(--font-heading);line-height:1.08;font-weight:400;letter-spacing:-.03em;font-optical-sizing:auto;font-variation-settings:'opsz' 144,'SOFT' 30}
+h1{font-variation-settings:'opsz' 144,'SOFT' 50}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:var(--font-body);cursor:pointer}
+input,select,textarea{font-family:var(--font-body)}
+ul{list-style:none}
+
+/* ── Layout ── */
+.container{width:100%;max-width:1220px;margin:0 auto;padding:0 1.5rem}
+.section{padding:5rem 0}
+.section-sm{padding:3rem 0}
+
+/* ── Grid ── */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;cursor:pointer;transition:all var(--transition-fast);border:none;white-space:nowrap}
+.btn-primary{background:var(--accent-blue);color:#fff}
+.btn-primary:hover{background:var(--accent-blue-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.35)}
+.btn-gold{background:var(--accent-gold);color:#fff}
+.btn-gold:hover{background:#B45309;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--text-on-dark);border:1.5px solid rgba(255,255,255,.3)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-outline-blue{background:transparent;color:var(--accent-blue);border:1.5px solid var(--accent-blue)}
+.btn-outline-blue:hover{background:var(--accent-blue);color:#fff}
+.btn-sm{padding:.5rem 1.1rem;font-size:.85rem}
+.btn-lg{padding:1rem 2.25rem;font-size:1.05rem}
+
+/* ── Tags / Badges ── */
+.tag{display:inline-block;padding:.25em .85em;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.02em}
+.tag-blue{background:rgba(37,99,235,.18);color:#93C5FD}
+.tag-gold{background:rgba(217,119,6,.18);color:var(--accent-gold-light)}
+.tag-green{background:rgba(34,197,94,.15);color:#86EFAC}
+.badge-featured{background:var(--accent-gold);color:#fff;font-size:.72rem;font-weight:700;padding:.2em .6em;border-radius:4px}
+
+/* ── Nav ── */
+#nav{position:sticky;top:0;z-index:1000;height:var(--nav-height);background:rgba(8,14,28,.82);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border-dark);transition:background var(--transition-mid)}
+#nav.scrolled{background:rgba(8,14,28,.97)}
+.nav-inner{display:flex;align-items:center;height:100%;gap:2.5rem}
+.nav-logo{font-family:var(--font-heading);font-size:1.45rem;font-weight:400;color:#fff;letter-spacing:-.02em;flex-shrink:0;cursor:pointer}
+.nav-logo span{color:var(--accent-gold)}
+.nav-links{display:flex;align-items:center;gap:.25rem;flex:1;justify-content:center}
+.nav-links a{padding:.5rem .85rem;border-radius:var(--radius-sm);font-size:.9rem;font-weight:500;color:rgba(255,255,255,.75);transition:all var(--transition-fast);position:relative}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:18px;height:2px;background:var(--accent-blue);border-radius:2px}
+.nav-cta{flex-shrink:0}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:.5rem;cursor:pointer}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--transition-mid)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile-drawer{position:fixed;inset:0;background:var(--bg-dark);z-index:999;display:flex;flex-direction:column;padding:calc(var(--nav-height) + 2rem) 2rem 2rem;transform:translateX(100%);transition:transform var(--transition-mid)}
+.nav-mobile-drawer.open{transform:none}
+.nav-mobile-drawer a{font-size:1.5rem;font-family:var(--font-heading);padding:.75rem 0;border-bottom:1px solid var(--border-dark);color:rgba(255,255,255,.85)}
+.nav-mobile-drawer a:hover{color:#fff}
+.nav-mobile-drawer .btn{margin-top:1.5rem;width:100%;justify-content:center}
+
+@media(max-width:1023px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+
+/* ── Page Transition ── */
+#app{opacity:1;transition:opacity var(--transition-fast)}
+#app.page-exit{opacity:0}
+#app.page-enter{opacity:0}
+
+/* ── Hero (shared dark hero) ── */
+.hero-dark{background:var(--bg-dark);position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.06) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none}
+.hero-subpage{padding:calc(var(--nav-height) + 3.5rem) 0 3.5rem}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--text-muted-dark);margin-bottom:1.25rem}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color var(--transition-fast)}
+.breadcrumb a:hover{color:#fff}
+.breadcrumb-sep{opacity:.4}
+.hero-subpage h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:1rem}
+.hero-subpage p{font-size:1.05rem;color:var(--text-muted-dark);max-width:560px}
+
+/* ── Section Titles ── */
+.section-label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-blue);margin-bottom:.75rem}
+.section-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:600;margin-bottom:1rem;line-height:1.2}
+.section-title.light{color:var(--text-on-dark)}
+.section-title.dark{color:var(--text-primary)}
+.section-desc{font-size:1.05rem;color:var(--text-muted);max-width:540px}
+.section-desc.light{color:var(--text-muted-dark)}
+.text-center{text-align:center}
+.text-center .section-desc{margin:0 auto}
+
+/* ── Service Cards ── */
+.service-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:2rem;box-shadow:var(--shadow-card);transition:transform var(--transition-fast),box-shadow var(--transition-fast);border:1px solid var(--border);cursor:pointer}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.14)}
+.service-card-dark{background:var(--bg-card);border:1px solid var(--border-dark);color:var(--text-on-dark)}
+.service-card-dark:hover{box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.service-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem;background:rgba(37,99,235,.12)}
+.service-num{font-size:.78rem;font-weight:700;color:var(--accent-blue);letter-spacing:.06em;margin-bottom:.5rem;font-family:var(--font-body)}
+.service-card h3{font-size:1.2rem;margin-bottom:.6rem}
+.service-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem}
+.service-card-dark p{color:var(--text-muted-dark)}
+.service-checklist{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1.25rem}
+.service-checklist li{font-size:.85rem;color:var(--text-muted);display:flex;align-items:center;gap:.5rem}
+.service-card-dark .service-checklist li{color:var(--text-muted-dark)}
+.service-checklist li::before{content:'✓';color:var(--accent-blue);font-weight:700;flex-shrink:0}
+.service-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.88rem;font-weight:600;color:var(--accent-blue);transition:gap var(--transition-fast)}
+.service-link:hover{gap:.6rem}
+
+/* ── Stats ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem}
+.stat-item{text-align:center}
+.stat-number{font-family:var(--font-heading);font-size:clamp(2.5rem,6vw,4rem);color:var(--accent-gold);line-height:1;margin-bottom:.35rem}
+.stat-label{font-size:.88rem;color:var(--text-muted-dark);font-weight:500}
+
+/* ── Logo Bar ── */
+.logo-bar{background:#F1F5FF;padding:2.75rem 0}
+.logo-bar-title{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2rem}
+.logo-bar-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.25rem 2.25rem;max-width:1180px;margin:0 auto;padding:0 1rem}
+.logo-badge{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0;background:transparent;border:none}
+.logo-badge img{max-height:38px;max-width:140px;width:auto;height:auto;object-fit:contain;filter:grayscale(100%) opacity(.55);transition:filter .35s ease,transform .35s ease}
+.logo-badge:hover img{filter:grayscale(0%) opacity(1);transform:translateY(-2px)}
+@media(max-width:640px){.logo-bar-logos{gap:1rem 1.5rem}.logo-badge{height:38px}.logo-badge img{max-height:30px;max-width:110px}}
+
+/* ── Reference Cards ── */
+.ref-card{background:var(--card-bg);border-radius:var(--radius-lg);padding:1.75rem;box-shadow:var(--shadow-card);border:1px solid var(--border)}
+.ref-card-dark{background:var(--bg-card);border:1px solid var(--border-dark)}
+.ref-stars{display:flex;gap:2px;margin-bottom:.85rem}
+.ref-star{color:var(--accent-gold-light);font-size:1rem}
+.ref-text{font-size:.92rem;line-height:1.65;color:var(--text-primary);margin-bottom:1rem;font-style:italic}
+.ref-card-dark .ref-text{color:rgba(255,255,255,.85)}
+.ref-meta{display:flex;align-items:center;gap:.75rem}
+.ref-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent-blue),#7C3AED);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;flex-shrink:0}
+.ref-name{font-size:.88rem;font-weight:600;color:var(--text-primary)}
+.ref-card-dark .ref-name{color:#fff}
+.ref-type{font-size:.78rem;color:var(--text-muted)}
+.ref-card-dark .ref-type{color:var(--text-muted-dark)}
+
+/* ── Comparator ── */
+.comp-panel{background:var(--bg-surface);border-bottom:1px solid var(--border-dark);padding:1.25rem 0;position:sticky;top:var(--nav-height);z-index:100}
+.comp-panel-inner{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.comp-tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.comp-tab{padding:.45rem 1rem;border-radius:999px;border:1px solid var(--border-dark);background:transparent;color:rgba(255,255,255,.65);font-size:.85rem;font-weight:600;cursor:pointer;transition:all var(--transition-fast)}
+.comp-tab:hover{border-color:var(--accent-blue);color:var(--accent-blue)}
+.comp-tab.active{background:var(--accent-blue);color:#fff;border-color:var(--accent-blue)}
+.comp-filter-group{display:flex;align-items:center;gap:.5rem}
+.comp-filter-group label{font-size:.8rem;color:var(--text-muted-dark);white-space:nowrap}
+.comp-filter-group input[type=range]{width:140px;accent-color:var(--accent-blue)}
+.comp-filter-group select{background:var(--bg-card);border:1px solid var(--border-dark);color:#fff;border-radius:var(--radius-sm);padding:.4rem .75rem;font-size:.85rem}
+.comp-amount-label{font-size:.85rem;font-weight:600;color:var(--accent-gold-light);white-space:nowrap}
+.comp-reset{background:none;border:1px solid var(--border-dark);color:var(--text-muted-dark);padding:.4rem .85rem;border-radius:var(--radius-sm);font-size:.8rem;cursor:pointer;transition:all var(--transition-fast)}
+.comp-reset:hover{border-color:var(--accent-blue);color:var(--accent-blue)}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0}
+.comp-card{background:var(--bg-card);border-radius:var(--radius-lg);padding:1.75rem;border:1px solid var(--border-dark);transition:transform var(--transition-fast),box-shadow var(--transition-fast);position:relative}
+.comp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card-dark)}
+.comp-card.featured{border-color:var(--accent-gold);box-shadow:0 0 0 1px var(--accent-gold)}
+.comp-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+.comp-bank{font-size:.82rem;color:var(--text-muted-dark)}
+.comp-name{font-size:1.05rem;font-weight:600;margin-bottom:.25rem}
+.comp-rates{display:flex;gap:1.5rem;margin:1.25rem 0;padding:1rem 0;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
+.comp-rate-item{text-align:center}
+.comp-rate-val{font-family:var(--font-heading);font-size:1.75rem;color:var(--accent-blue)}
+.comp-rate-label{font-size:.72rem;color:var(--text-muted-dark);margin-top:.2rem}
+.comp-perks{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
+.comp-perk{font-size:.83rem;color:var(--text-muted-dark);display:flex;align-items:center;gap:.4rem}
+.comp-perk::before{content:'✓';color:var(--accent-blue);font-weight:700}
+.comp-max{font-size:.82rem;color:var(--text-muted-dark);margin-bottom:1rem}
+.comp-empty{text-align:center;padding:4rem 2rem;color:var(--text-muted-dark);font-size:1.05rem;grid-column:1/-1}
+
+/* ── Detail Layout ── */
+.detail-grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start}
+@media(max-width:900px){.detail-grid{grid-template-columns:1fr}}
+.detail-body h2{font-size:1.5rem;margin:2.25rem 0 .85rem}
+.detail-body p{font-size:.97rem;line-height:1.75;color:rgba(255,255,255,.8);margin-bottom:1rem}
+.detail-steps{display:flex;flex-direction:column;gap:1.25rem;margin:1rem 0}
+.detail-step{display:flex;gap:1rem}
+.detail-step-num{width:36px;height:36px;border-radius:50%;background:var(--accent-blue);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+.detail-step-text h4{font-size:.97rem;font-weight:600;margin-bottom:.2rem}
+.detail-step-text p{font-size:.88rem;color:var(--text-muted-dark);margin-bottom:0}
+.accordion{margin:1rem 0}
+.accordion-item{border-bottom:1px solid var(--border-dark)}
+.accordion-header{width:100%;background:none;border:none;color:var(--text-on-dark);font-family:var(--font-body);font-size:.97rem;font-weight:600;padding:1.1rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left}
+.accordion-icon{font-size:1.1rem;transition:transform var(--transition-mid);flex-shrink:0}
+.accordion-item.open .accordion-icon{transform:rotate(45deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.accordion-item.open .accordion-body{max-height:400px}
+.accordion-body p{padding:.25rem 0 1.1rem;font-size:.9rem;color:var(--text-muted-dark);line-height:1.65}
+.sidebar-card{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);padding:1.75rem;position:sticky;top:calc(var(--nav-height) + 1.5rem)}
+.sidebar-card h3{font-size:1.15rem;margin-bottom:1.25rem}
+.sidebar-form .form-group{margin-bottom:1rem}
+.sidebar-contact{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border-dark)}
+.sidebar-contact a{display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--text-muted-dark);margin-bottom:.5rem;transition:color var(--transition-fast)}
+.sidebar-contact a:hover{color:#fff}
+
+/* ── Forms ── */
+.form-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1.1rem}
+.form-group label{font-size:.82rem;font-weight:600;color:var(--text-muted-dark)}
+.form-group label.dark{color:var(--text-muted)}
+.form-group input,.form-group select,.form-group textarea{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-sm);color:var(--text-on-dark);padding:.7rem 1rem;font-size:.92rem;transition:border-color var(--transition-fast);width:100%}
+.form-group input.light,.form-group select.light,.form-group textarea.light{background:#F1F5FF;border-color:#CBD5E1;color:var(--text-primary)}
+.form-group input:focus,.form-group select.focus,.form-group textarea:focus{outline:none;border-color:var(--accent-blue)}
+.form-group.error input,.form-group.error select,.form-group.error textarea{border-color:#EF4444}
+.form-error-msg{font-size:.78rem;color:#EF4444;display:none}
+.form-group.error .form-error-msg{display:block}
+.form-checkbox{display:flex;align-items:flex-start;gap:.65rem;margin-bottom:1.1rem}
+.form-checkbox input{margin-top:2px;accent-color:var(--accent-blue);width:16px;height:16px;flex-shrink:0}
+.form-checkbox label{font-size:.83rem;color:var(--text-muted-dark);line-height:1.5}
+.form-success{display:none;text-align:center;padding:3rem 1.5rem}
+.form-success-icon{font-size:3rem;margin-bottom:1rem}
+.form-success h3{font-size:1.3rem;margin-bottom:.5rem}
+.form-success p{font-size:.92rem;color:var(--text-muted-dark)}
+
+/* ── Timeline ── */
+.timeline{position:relative;padding:2rem 0}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border-dark);transform:translateX(-50%)}
+@media(max-width:768px){.timeline::before{left:16px}}
+.timeline-item{display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:center;margin-bottom:3rem}
+@media(max-width:768px){.timeline-item{grid-template-columns:auto 1fr;gap:1rem}}
+.timeline-item:nth-child(odd) .timeline-left{text-align:right}
+.timeline-item:nth-child(even) .timeline-left{order:3}
+.timeline-item:nth-child(even) .timeline-dot{order:2}
+.timeline-item:nth-child(even) .timeline-right{order:1;text-align:right}
+@media(max-width:768px){.timeline-item:nth-child(even) .timeline-left,.timeline-item:nth-child(even) .timeline-right{order:unset;text-align:left}}
+.timeline-dot{width:36px;height:36px;border-radius:50%;background:var(--accent-blue);border:3px solid var(--bg-dark);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;z-index:1}
+.timeline-year{font-family:var(--font-heading);font-size:1.5rem;color:var(--accent-gold);margin-bottom:.2rem}
+.timeline-title{font-size:.97rem;font-weight:600;margin-bottom:.2rem}
+.timeline-desc{font-size:.85rem;color:var(--text-muted-dark)}
+.timeline-left,.timeline-right{padding:.5rem 0}
+
+/* ── Team Cards ── */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
+.team-card{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg);padding:2rem;text-align:center}
+.team-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent-blue),#7C3AED);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:2.2rem;color:#fff;margin:0 auto 1.25rem;overflow:hidden;border:3px solid rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.1);position:relative}
+.team-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.team-card{transition:all .35s cubic-bezier(.16,1,.3,1)}
+.team-card:hover{transform:translateY(-4px);border-color:rgba(96,165,250,.35);box-shadow:0 24px 48px -16px rgba(0,0,0,.6)}
+.team-card:hover .team-avatar{transform:scale(1.04);box-shadow:0 12px 32px rgba(37,99,235,.4),inset 0 0 0 1px rgba(255,255,255,.15)}
+.team-name{font-size:1.1rem;font-weight:600;margin-bottom:.25rem}
+.team-title{font-size:.82rem;color:var(--accent-gold-light);font-weight:600;margin-bottom:.75rem}
+.team-bio{font-size:.88rem;color:var(--text-muted-dark);line-height:1.6}
+.team-linkedin{display:inline-flex;align-items:center;gap:.35rem;margin-top:.85rem;font-size:.82rem;color:var(--accent-blue);text-decoration:none;transition:color var(--duration-normal)}
+.team-linkedin:hover{color:#60A5FA}
+
+/* ── LinkedIn pseudo-feed ── */
+.li-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:2.5rem}
+.li-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.25rem 1.35rem;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;transition:transform var(--duration-normal),box-shadow var(--duration-normal);text-decoration:none;color:#1f2937}
+.li-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px -12px rgba(37,99,235,.25);border-color:#bfdbfe}
+.li-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.li-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0A66C2,#0077B5);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-heading);font-size:1.05rem;flex-shrink:0;overflow:hidden}
+.li-author{font-size:.92rem;font-weight:600;color:#111827;line-height:1.2}
+.li-title{font-size:.74rem;color:#6b7280;margin-top:.15rem;line-height:1.3}
+.li-date{font-size:.72rem;color:#9ca3af;margin-top:.2rem;display:flex;align-items:center;gap:.3rem}
+.li-date::before{content:'';width:3px;height:3px;border-radius:50%;background:#9ca3af}
+.li-text{font-size:.88rem;line-height:1.55;color:#374151;flex:1;margin-bottom:.85rem;white-space:pre-wrap}
+.li-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}
+.li-tag{font-size:.72rem;color:#0A66C2;font-weight:500}
+.li-foot{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid #f3f4f6;font-size:.78rem;color:#0A66C2;font-weight:600}
+.li-logo{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#0A66C2;color:#fff;border-radius:3px;font-size:.62rem;font-weight:700;font-family:var(--font-body)}
+
+/* ── Values ── */
+.value-card{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:1.5rem}
+.value-icon{font-size:1.75rem;margin-bottom:.75rem}
+.value-title{font-size:1rem;font-weight:600;margin-bottom:.4rem}
+.value-desc{font-size:.87rem;color:var(--text-muted-dark);line-height:1.55}
+
+/* ── Contact Layout ── */
+.contact-grid{display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info-item{display:flex;align-items:flex-start;gap:.85rem;margin-bottom:1.5rem}
+.contact-info-icon{width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(37,99,235,.15);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-info-label{font-size:.78rem;color:var(--text-muted-dark);margin-bottom:.2rem}
+.contact-info-value{font-size:.97rem;font-weight:500}
+.contact-info-value a{color:#fff;transition:color var(--transition-fast)}
+.contact-info-value a:hover{color:var(--accent-blue)}
+.map-placeholder{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:2rem;text-align:center;margin-top:1.5rem}
+.map-placeholder-icon{font-size:2rem;margin-bottom:.5rem;opacity:.6}
+.map-placeholder p{font-size:.9rem;color:var(--text-muted-dark)}
+.hours-table{width:100%;font-size:.88rem;border-collapse:collapse;margin-top:.5rem}
+.hours-table td{padding:.3rem 0;color:var(--text-muted-dark)}
+.hours-table td:first-child{color:rgba(255,255,255,.75);font-weight:500}
+
+/* ── Footer ── */
+#footer{background:var(--bg-surface);border-top:1px solid var(--border-dark);padding:4rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1.5fr 1.5fr;gap:2.5rem}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr}}
+.footer-logo{font-family:var(--font-heading);font-size:1.4rem;margin-bottom:.65rem;color:#fff}
+.footer-logo span{color:var(--accent-gold)}
+.footer-tagline{font-size:.85rem;color:var(--text-muted-dark);line-height:1.55;margin-bottom:1rem}
+.footer-col h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem;font-family:var(--font-body)}
+.footer-col a{display:block;font-size:.88rem;color:var(--text-muted-dark);margin-bottom:.5rem;transition:color var(--transition-fast)}
+.footer-col a:hover{color:#fff}
+.footer-contact-item{display:flex;align-items:center;gap:.5rem;font-size:.88rem;color:var(--text-muted-dark);margin-bottom:.5rem}
+.footer-contact-item a{color:var(--text-muted-dark);transition:color var(--transition-fast)}
+.footer-contact-item a:hover{color:#fff}
+.footer-legal{border-top:1px solid var(--border-dark);margin-top:2.5rem;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer-legal a{color:rgba(255,255,255,.3);transition:color var(--transition-fast)}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+
+/* ── CTA Section ── */
+.cta-section{background:linear-gradient(135deg,#0D1B4E 0%,#080E1C 100%);border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark);padding:5rem 0;text-align:center}
+.cta-section h2{font-size:clamp(1.75rem,4vw,2.75rem);margin-bottom:1rem}
+.cta-section p{font-size:1.05rem;color:var(--text-muted-dark);margin-bottom:2rem}
+
+/* ── Reveal / Animations ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.delay-1{transition-delay:.1s}
+.reveal.delay-2{transition-delay:.2s}
+.reveal.delay-3{transition-delay:.3s}
+.reveal.delay-4{transition-delay:.4s}
+
+/* ── Misc ── */
+.pill-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35em 1em;border-radius:999px;border:1px solid rgba(37,99,235,.35);background:rgba(37,99,235,.1);font-size:.82rem;font-weight:600;color:#93C5FD;margin-bottom:1.5rem}
+.gradient-text{background:linear-gradient(90deg,#fff 0%,#93C5FD 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.divider{border:none;border-top:1px solid var(--border-dark);margin:3rem 0}
+.cert-box{background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:1.5rem;display:flex;align-items:center;gap:1.25rem}
+.cert-icon{width:52px;height:52px;border-radius:var(--radius-sm);background:rgba(37,99,235,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.cert-body h4{font-size:.97rem;font-weight:600;margin-bottom:.2rem}
+.cert-body p{font-size:.83rem;color:var(--text-muted-dark);line-height:1.5}
+
+/* ── 404 ── */
+.not-found{text-align:center;padding:8rem 1.5rem}
+.not-found h1{font-size:6rem;color:var(--accent-blue);opacity:.3;margin-bottom:0}
+.not-found h2{font-size:1.75rem;margin-bottom:1rem}
+.not-found p{color:var(--text-muted-dark);margin-bottom:2rem}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .section{padding:3.5rem 0}
+  .detail-grid,.contact-grid{grid-template-columns:1fr}
+  .sidebar-card{position:static}
+  .timeline::before{display:none}
+  .timeline-item{grid-template-columns:auto 1fr}
+  .timeline-item:nth-child(even) .timeline-left,.timeline-item:nth-child(even) .timeline-right,.timeline-item:nth-child(even) .timeline-dot{order:unset}
+  .timeline-item:nth-child(even) .timeline-right{text-align:left}
+  .timeline-left.empty{display:none}
+  .comp-panel-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .btn-lg{padding:.8rem 1.5rem;font-size:.95rem}
+  .hero-cta-group{flex-direction:column;align-items:flex-start}
+}
+
+/* ══════════════════════════════════════════
+   SHADCN-STYLE UPGRADES
+══════════════════════════════════════════ */
+
+/* Pill badge with pulsing dot */
+.pill-badge{position:relative;backdrop-filter:blur(8px);transition:all .3s ease}
+.pill-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#60A5FA;box-shadow:0 0 0 0 rgba(96,165,250,.6);animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{
+  0%{box-shadow:0 0 0 0 rgba(96,165,250,.6)}
+  70%{box-shadow:0 0 0 8px rgba(96,165,250,0)}
+  100%{box-shadow:0 0 0 0 rgba(96,165,250,0)}
+}
+.pill-badge:hover{border-color:rgba(96,165,250,.6);background:rgba(37,99,235,.18)}
+
+/* Refined gradient text */
+.gradient-text{background:linear-gradient(110deg,#fff 20%,#93C5FD 50%,#D97706 95%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% auto;animation:shimmer 6s linear infinite}
+@keyframes shimmer{to{background-position:200% center}}
+
+/* Decorative glow orbs for hero */
+.glow-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.5}
+.glow-orb-1{width:480px;height:480px;background:radial-gradient(circle,rgba(37,99,235,.4),transparent 70%);top:-120px;right:-100px;animation:float-orb 14s ease-in-out infinite}
+.glow-orb-2{width:380px;height:380px;background:radial-gradient(circle,rgba(217,119,6,.25),transparent 70%);bottom:-80px;left:-80px;animation:float-orb 18s ease-in-out infinite reverse}
+@keyframes float-orb{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(20px,-30px) scale(1.1)}
+}
+
+/* Hero trust row */
+.hero-trust{display:flex;align-items:center;gap:1rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);max-width:560px}
+.trust-avatars{display:flex}
+.trust-avatar{width:36px;height:36px;border-radius:50%;border:2px solid var(--bg-dark);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:.78rem;color:#fff;margin-left:-10px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.trust-avatar:first-child{margin-left:0}
+.trust-avatar.a1{background:linear-gradient(135deg,#2563EB,#7C3AED)}
+.trust-avatar.a2{background:linear-gradient(135deg,#D97706,#B45309)}
+.trust-avatar.a3{background:linear-gradient(135deg,#059669,#047857)}
+.trust-avatar.a4{background:linear-gradient(135deg,#DC2626,#991B1B)}
+.trust-text{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.4}
+.trust-stars{color:#FBBF24;font-size:.85rem;letter-spacing:1px;margin-bottom:.15rem}
+.trust-text strong{color:#fff;font-weight:600}
+
+/* Refined buttons - shadcn-like */
+.btn{position:relative;overflow:hidden;letter-spacing:-.01em}
+.btn-primary{background:linear-gradient(180deg,#3B82F6,#2563EB);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.2),0 4px 12px rgba(37,99,235,.25)}
+.btn-primary:hover{background:linear-gradient(180deg,#60A5FA,#3B82F6);transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 12px 32px rgba(37,99,235,.45)}
+.btn-outline{backdrop-filter:blur(12px);background:rgba(255,255,255,.04)}
+.btn-outline:hover{transform:translateY(-2px)}
+
+/* Service cards - shadcn upgrade */
+.service-card{position:relative;background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:2rem 1.85rem;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:all .35s cubic-bezier(.16,1,.3,1);overflow:hidden}
+.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,.04),transparent 60%);opacity:0;transition:opacity .35s ease;pointer-events:none}
+.service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#2563EB,#D97706,transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.service-card:hover{transform:translateY(-6px);border-color:#BFDBFE;box-shadow:0 20px 40px -16px rgba(37,99,235,.25),0 1px 3px rgba(0,0,0,.05)}
+.service-card:hover::before{opacity:1}
+.service-card:hover::after{transform:scaleX(1)}
+.service-card > *{position:relative;z-index:1}
+.service-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(124,58,237,.08));border:1px solid rgba(37,99,235,.2);font-size:1.6rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px -4px rgba(37,99,235,.15);transition:all .35s ease}
+.service-card:hover .service-icon{transform:scale(1.05) rotate(-3deg);background:linear-gradient(135deg,rgba(37,99,235,.2),rgba(217,119,6,.12));border-color:rgba(37,99,235,.35)}
+.service-link{font-weight:600;letter-spacing:-.01em}
+.service-link::after{content:'';display:inline-block;width:14px;height:1.5px;background:currentColor;margin-left:.4rem;transition:width .3s ease;vertical-align:middle}
+.service-card:hover .service-link::after{width:24px}
+
+/* Logo bar - subtle elevation */
+.logo-bar{background:linear-gradient(180deg,#F8FAFC 0%,#F1F5FF 100%);border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0}
+.logo-badge{transition:all .3s ease;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.logo-badge:hover{color:var(--accent-blue);border-color:#BFDBFE;transform:translateY(-2px);box-shadow:0 8px 16px -8px rgba(37,99,235,.2)}
+
+/* Section labels - cleaner */
+.section-label{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .85rem;border-radius:999px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.18);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-blue);margin-bottom:1rem}
+.section-label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-blue)}
+
+/* Comparator polish */
+.comp-tabs{padding:.35rem;background:rgba(0,0,0,.04);border-radius:12px;border:1px solid #E5E7EB}
+.comp-tab{padding:.65rem 1.2rem;border-radius:9px;font-weight:600;font-size:.88rem;border:none;background:transparent;cursor:pointer;color:#64748B;transition:all .25s ease}
+.comp-tab.active{background:#fff;color:#0F172A;box-shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04)}
+.comp-tab:hover:not(.active){color:#0F172A}
+
+/* Reveal animation refinement */
+.reveal{transition-timing-function:cubic-bezier(.16,1,.3,1);transition-duration:.7s}
+
+/* ══════════════════════════════════════════
+   EDITORIAL UPGRADE — inspired by jansusanka.cz, jtbank.cz, moneta.cz
+══════════════════════════════════════════ */
+
+/* Numbered editorial section labels */
+.eyebrow{display:inline-flex;align-items:center;gap:.85rem;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-gold);margin-bottom:1.25rem}
+.eyebrow .num{color:var(--accent-gold);font-weight:600}
+.eyebrow::before{content:'';width:32px;height:1px;background:currentColor;opacity:.5}
+.eyebrow.light{color:rgba(255,255,255,.6)}
+.eyebrow.light .num{color:#D97706}
+
+/* Big editorial display headline */
+.display-xl{font-family:var(--font-heading);font-size:clamp(2.5rem,5.5vw,4.75rem);font-weight:300;letter-spacing:-.045em;line-height:1;font-variation-settings:'opsz' 144,'SOFT' 50,'WONK' 0}
+.display-xl em{font-style:italic;color:var(--accent-gold);font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1}
+.display-lg{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3.25rem);font-weight:300;letter-spacing:-.035em;line-height:1.05;font-variation-settings:'opsz' 144,'SOFT' 50}
+.display-lg em{font-style:italic;color:var(--accent-gold);font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1}
+
+/* Hero asymmetric layout */
+.hero-split{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
+@media(max-width:900px){.hero-split{grid-template-columns:1fr;gap:3rem}}
+
+.hero-portrait{position:relative;max-width:630px;margin-left:auto;margin-right:-2rem;display:flex;align-items:flex-end;justify-content:center;min-height:680px}
+.hero-portrait::before{content:'';position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.35) 0%,rgba(37,99,235,.12) 30%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-55%);filter:blur(40px);z-index:0;animation:float-orb 18s ease-in-out infinite}
+.hero-portrait::after{content:'';position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,.18) 0%,transparent 70%);bottom:-40px;right:-20px;filter:blur(60px);z-index:0}
+.hero-portrait img{position:relative;z-index:2;width:100%;max-width:600px;height:auto;display:block;filter:drop-shadow(0 24px 48px rgba(0,0,0,.45)) drop-shadow(0 0 40px rgba(37,99,235,.15))}
+.hero-portrait-card{position:absolute;bottom:2rem;left:0;background:rgba(8,14,28,.78);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1rem 1.25rem;display:flex;align-items:center;gap:.85rem;z-index:3;box-shadow:0 12px 32px rgba(0,0,0,.4);text-decoration:none;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.hero-portrait-card:hover{transform:translateY(-3px);border-color:rgba(10,102,194,.5);box-shadow:0 20px 44px rgba(0,0,0,.5),0 0 0 1px rgba(10,102,194,.3)}
+.hero-portrait-card .pc-arrow{color:rgba(255,255,255,.45);margin-left:.35rem;transition:color .25s ease,transform .25s ease}
+.hero-portrait-card:hover .pc-arrow{color:#fff;transform:translate(2px,-2px)}
+.hero-portrait-card .pc-name{font-size:.95rem;font-weight:600;color:#fff;line-height:1.15}
+.hero-portrait-card .pc-title{font-size:.74rem;color:rgba(255,255,255,.6);margin-top:.15rem}
+.hero-portrait-card .pc-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#0A66C2,#0077B5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:700;flex-shrink:0}
+@media(max-width:900px){.hero-portrait{margin:0 auto;max-width:480px;min-height:540px}.hero-portrait img{max-width:460px}.hero-portrait::before{width:400px;height:400px}}
+
+/* Editorial quote section */
+.editorial-quote{background:linear-gradient(180deg,#FAF7F2 0%,#F4EFE6 100%);position:relative;overflow:hidden}
+.editorial-quote::before{content:'"';position:absolute;top:-2rem;left:3rem;font-family:var(--font-heading);font-size:24rem;line-height:1;color:rgba(217,119,6,.08);font-weight:400;pointer-events:none}
+.eq-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:5rem;align-items:center;position:relative}
+@media(max-width:900px){.eq-grid{grid-template-columns:1fr;gap:3rem}}
+.eq-quote{font-family:var(--font-heading);font-size:clamp(1.85rem,3.5vw,3rem);font-weight:300;line-height:1.15;letter-spacing:-.03em;color:#1A1410;font-variation-settings:'opsz' 144,'SOFT' 50}
+.eq-quote em{color:var(--accent-gold);font-style:italic;font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1}
+.eq-attribution{display:flex;align-items:center;gap:1rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(26,20,16,.1)}
+.eq-avatar{width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.eq-avatar img{width:100%;height:100%;object-fit:cover}
+.eq-name{font-size:.95rem;font-weight:600;color:#1A1410}
+.eq-role{font-size:.78rem;color:#78727a}
+
+.eq-side{display:flex;flex-direction:column;gap:1.5rem}
+.eq-side-item{padding:1.5rem 0;border-bottom:1px solid rgba(26,20,16,.08)}
+.eq-side-item:last-child{border-bottom:none}
+.eq-side-num{font-family:var(--font-mono);font-size:.72rem;color:var(--accent-gold);font-weight:600;letter-spacing:.05em;margin-bottom:.4rem}
+.eq-side-title{font-family:var(--font-heading);font-size:1.5rem;color:#1A1410;line-height:1.15;margin-bottom:.4rem;font-weight:300;letter-spacing:-.02em;font-variation-settings:'opsz' 72,'SOFT' 50}
+.eq-side-desc{font-size:.88rem;color:#5a5560;line-height:1.55}
+
+/* Founders preview - asymmetric image+text */
+.founders-preview{background:linear-gradient(180deg,#FFFFFF 0%,#FAF7F2 100%);position:relative}
+.fp-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
+@media(max-width:900px){.fp-grid{grid-template-columns:1fr;gap:3rem}}
+.fp-images{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.fp-img{aspect-ratio:3/4;border-radius:18px;overflow:hidden;box-shadow:0 24px 48px -16px rgba(0,0,0,.18)}
+.fp-img img{width:100%;height:100%;object-fit:cover;display:block}
+.fp-img-1{transform:translateY(2rem)}
+.fp-img-2{transform:translateY(-1rem)}
+.fp-decor{position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,.18),transparent 70%);filter:blur(40px);top:-20px;right:-30px;pointer-events:none}
+.fp-text h2{margin-bottom:1.25rem}
+.fp-text p{font-size:1.05rem;line-height:1.7;color:#5a5560;margin-bottom:1.25rem}
+.fp-text p strong{color:#1A1410;font-weight:600}
+.fp-mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:2rem 0}
+.fp-mini-stat{padding:1.25rem;background:#fff;border:1px solid #E9E2D3;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.fp-mini-stat-num{font-family:var(--font-heading);font-size:2rem;color:var(--accent-gold);line-height:1;margin-bottom:.3rem}
+.fp-mini-stat-lab{font-size:.78rem;color:#78727a;font-weight:500}
+
+/* Bento services grid */
+.bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1.5rem}
+.bento-grid > .service-card:first-child{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,#0F1729 0%,#1A2547 100%);color:#fff;border-color:rgba(96,165,250,.2);min-height:340px;position:relative;overflow:hidden}
+.bento-grid > .service-card:first-child::before{background:radial-gradient(ellipse at top right,rgba(37,99,235,.25),transparent 60%);opacity:1}
+.bento-grid > .service-card:first-child h3{color:#fff;font-family:var(--font-heading);font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:400;line-height:1.1;letter-spacing:-.5px;margin-bottom:1rem}
+.bento-grid > .service-card:first-child p{color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.6;max-width:90%}
+.bento-grid > .service-card:first-child .service-icon{background:linear-gradient(135deg,rgba(217,119,6,.2),rgba(217,119,6,.05));border-color:rgba(217,119,6,.35);width:60px;height:60px;font-size:1.85rem}
+.bento-grid > .service-card:first-child .service-link{color:var(--accent-gold-light);font-size:.95rem}
+@media(max-width:900px){
+  .bento-grid{grid-template-columns:1fr}
+  .bento-grid > .service-card:first-child{grid-column:span 1;min-height:280px}
+}
+
+/* Section header layout (jansusanka style) */
+.section-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.section-header .sh-right{padding-bottom:.5rem}
+.section-header .sh-right p{font-size:1rem;color:var(--text-muted);line-height:1.65;max-width:380px;margin-left:auto;text-align:left}
+.section-header.dark .sh-right p{color:var(--text-muted-dark)}
+@media(max-width:900px){.section-header{grid-template-columns:1fr;gap:1.5rem}.section-header .sh-right p{margin-left:0;max-width:none}}
+
+/* Decorative gold accent line */
+.gold-line{display:block;width:60px;height:2px;background:var(--accent-gold);margin:1.5rem 0}
+
+/* Override section-label to be cleaner editorial */
+.section-label{background:transparent;border:none;padding:0;color:var(--accent-gold);font-family:var(--font-mono);letter-spacing:.12em;font-size:.72rem;font-weight:500;display:inline-flex;align-items:center;gap:.75rem}
+.section-label::before{display:none}
+.section-label.with-num::before{display:inline-block;content:attr(data-num);width:auto;height:auto;background:none;border-radius:0;color:var(--accent-gold);font-weight:700;margin-right:.4rem}
+
+/* Comparator cards - shadcn polish */
+.comp-card{background:linear-gradient(180deg,#1A2238,#141B30);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.comp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(96,165,250,.4),transparent);opacity:0;transition:opacity .3s ease}
+.comp-card:hover{transform:translateY(-4px);border-color:rgba(96,165,250,.35);box-shadow:0 24px 48px -16px rgba(0,0,0,.6),0 0 0 1px rgba(96,165,250,.15)}
+.comp-card:hover::before{opacity:1}
+.comp-card.featured{border-color:rgba(217,119,6,.6);box-shadow:0 0 0 1px rgba(217,119,6,.4),0 12px 32px -12px rgba(217,119,6,.3)}
+.comp-card.featured::after{content:'★ TOP NABÍDKA';position:absolute;top:1rem;right:1rem;background:linear-gradient(135deg,#D97706,#B45309);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.3rem .65rem;border-radius:999px}
+.comp-rate-val{background:linear-gradient(135deg,#60A5FA,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}
+.comp-perks li{position:relative;padding-left:1.4rem;font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.5}
+.comp-perks li::before{content:'✓';position:absolute;left:0;top:0;color:#10B981;font-weight:700}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/" onclick="navigate('/');return false">fin<span>-set</span>.cz</a>
+      <div class="nav-links">
+        <a href="/" onclick="navigate('/');return false">Domů</a>
+        <a href="/sluzby" onclick="navigate('/sluzby');return false">Služby</a>
+        <a href="/srovnavac" onclick="navigate('/srovnavac');return false">Srovnávač</a>
+        <a href="/o-nas" onclick="navigate('/o-nas');return false">O nás</a>
+        <a href="/reference" onclick="navigate('/reference');return false">Reference</a>
+        <a href="/kontakt" onclick="navigate('/kontakt');return false">Kontakt</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-gold btn-sm" href="/kontakt" onclick="navigate('/kontakt');return false">Konzultace zdarma</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile-drawer" id="mobileDrawer">
+    <a href="/" onclick="navigate('/');closeMobileMenu();return false">Domů</a>
+    <a href="/sluzby" onclick="navigate('/sluzby');closeMobileMenu();return false">Služby</a>
+    <a href="/srovnavac" onclick="navigate('/srovnavac');closeMobileMenu();return false">Srovnávač</a>
+    <a href="/o-nas" onclick="navigate('/o-nas');closeMobileMenu();return false">O nás</a>
+    <a href="/reference" onclick="navigate('/reference');closeMobileMenu();return false">Reference</a>
+    <a href="/kontakt" onclick="navigate('/kontakt');closeMobileMenu();return false">Kontakt</a>
+    <a class="btn btn-gold" href="/kontakt" onclick="navigate('/kontakt');closeMobileMenu();return false">Konzultace zdarma</a>
+  </div>
+</nav>
+
+<div id="app"></div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">fin<span>-set</span>.cz</div>
+        <p class="footer-tagline">Nezávislé finanční poradenství pro podnikatele. Překládáme vaše plány do řeči bank.</p>
+        <div class="tag tag-blue" style="font-size:.78rem">Vázaný zástupce ČNB</div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigace</h4>
+        <a href="/" onclick="navigate('/');return false">Domů</a>
+        <a href="/sluzby" onclick="navigate('/sluzby');return false">Služby</a>
+        <a href="/srovnavac" onclick="navigate('/srovnavac');return false">Srovnávač</a>
+        <a href="/o-nas" onclick="navigate('/o-nas');return false">O nás</a>
+        <a href="/reference" onclick="navigate('/reference');return false">Reference</a>
+        <a href="/kontakt" onclick="navigate('/kontakt');return false">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h4>Služby</h4>
+        <a href="/sluzby/podnikatelske-poradenstvi" onclick="navigate('/sluzby/podnikatelske-poradenstvi');return false">Podnikatelské poradenství</a>
+        <a href="/sluzby/financovani-nemovitosti" onclick="navigate('/sluzby/financovani-nemovitosti');return false">Financování nemovitostí</a>
+        <a href="/sluzby/projektove-financovani" onclick="navigate('/sluzby/projektove-financovani');return false">Projektové financování</a>
+        <a href="/sluzby/firemni-uvery" onclick="navigate('/sluzby/firemni-uvery');return false">Firemní úvěry</a>
+        <a href="/sluzby/refinancovani" onclick="navigate('/sluzby/refinancovani');return false">Refinancování</a>
+        <a href="/sluzby/poradenstvi-svj-obce" onclick="navigate('/sluzby/poradenstvi-svj-obce');return false">SVJ a obce</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <div class="footer-contact-item">📧 <a href="mailto:info@fin-set.cz">info@fin-set.cz</a></div>
+        <div class="footer-contact-item">📞 <a href="tel:+420775939596">+420 775 939 596</a></div>
+        <div class="footer-contact-item">📍 Brno, Jihomoravský kraj</div>
+        <div class="footer-contact-item">⏰ Po–Pá 8:00–18:00</div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 fin-set.cz · Vázaný zástupce ČNB · IČO: 76295958</span>
+      <span>Broker Trust a.s. · IČO: 26439719</span>
+      <a href="/gdpr" onclick="navigate('/gdpr');return false">Zpracování osobních údajů</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* ══════════════════════════════════════════
+   DATA
+══════════════════════════════════════════ */
+const SERVICES = [
+  {
+    slug: 'podnikatelske-poradenstvi',
+    num: '01',
+    name: 'Podnikatelské poradenství',
+    icon: '🏢',
+    shortDesc: 'Praktické rady na řízení cashflow, načasování investic a dlouhodobé finanční myšlení.',
+    perks: ['Analýza cash-flow', 'Optimalizace nákladů', 'Finanční plán na 3–5 let'],
+    hero: 'Finanční strategie šitá na míru',
+    desc: [
+      'Každý podnikatel čelí jiným výzvám – sezónním výkyvům, potřebě investičního kapitálu nebo optimalizaci provozních nákladů. Naše poradenství začíná důkladnou analýzou vaší finanční situace a končí konkrétním akčním plánem.',
+      'Spolupracujeme s OSVČ, malými a středními podniky i rychle rostoucími start-upy. Naším cílem není jen najít financování – je to nastavit celou finanční strukturu tak, aby podporovala váš růst.',
+      'V průběhu spolupráce budeme vaším průvodcem při jednáních s bankami, investory i státními fondy. Vaším úkolem je podnikat. Naším úkolem je zajistit, že máte zdroje k tomu.'
+    ],
+    steps: [
+      { title: 'Úvodní konzultace', desc: 'Bezplatné setkání, kde pochopíme vaši situaci a cíle.' },
+      { title: 'Finanční analýza', desc: 'Rozbor účetnictví, cash-flow a stávající struktury financování.' },
+      { title: 'Návrh strategie', desc: 'Připravíme konkrétní doporučení a identifikujeme možnosti.' },
+      { title: 'Implementace a monitoring', desc: 'Pomáháme s realizací a průběžně vyhodnocujeme výsledky.' }
+    ],
+    faq: [
+      { q: 'Pro koho je poradenství vhodné?', a: 'Pro OSVČ, s.r.o. i a.s. v jakékoliv fázi – od začínajících podnikatelů po zavedené firmy s obratem přes 100 mil. Kč.' },
+      { q: 'Jak dlouho trvá první analýza?', a: 'Zpravidla 2–3 týdny od předání podkladů. Výstupem je písemná zpráva s doporučeními.' },
+      { q: 'Je poradenství zpoplatněno?', a: 'Prvotní konzultace je zdarma. Následná spolupráce je honorována fixní nebo výkonovou odměnou dle rozsahu.' }
+    ]
+  },
+  {
+    slug: 'financovani-nemovitosti',
+    num: '02',
+    name: 'Financování investičních nemovitostí',
+    icon: '🏗️',
+    shortDesc: 'Úvěry na koupi, rekonstrukci nebo výstavbu bytů, domů, hal a firemních sídel.',
+    perks: ['Investiční hypotéky', 'Developer loans', 'Refinancování portfolia'],
+    hero: 'Nemovitosti jako investice – s naší podporou',
+    desc: [
+      'Investice do nemovitostí jsou jedním z nejstabilnějších způsobů zhodnocení kapitálu. Správná struktura financování však rozhoduje o výsledné výnosnosti celého projektu.',
+      'Pomáháme individuálním investorům i developerům získat financování pro rezidenční projekty, komerční nemovitosti, revitalizace i akvizice existujících portfolií. Vyjednáváme s bankami, pojišťovnami i alternativními zdroji kapitálu.',
+      'Díky dlouhodobým vztahům s financujícími institucemi jsme schopni dojednat podmínky, které klient jen těžko získá sám – nižší sazby, delší fixace, flexibilnější zajišťovací podmínky.'
+    ],
+    steps: [
+      { title: 'Posouzení projektu', desc: 'Zhodnotíme investiční záměr, lokalitu a finanční parametry.' },
+      { title: 'Strukturace financování', desc: 'Navrhneme optimální mix vlastního a cizího kapitálu.' },
+      { title: 'Výběr a jednání s bankou', desc: 'Oslovíme relevantní instituce a vyjednáme nejlepší podmínky.' },
+      { title: 'Čerpání a monitoring', desc: 'Dohlédneme na průběh čerpání a plnění podmínek úvěru.' }
+    ],
+    faq: [
+      { q: 'Jaká je minimální výše investice?', a: 'Pracujeme s projekty od 2 mil. Kč. Pro developer projekty je minimum zpravidla 10 mil. Kč.' },
+      { q: 'Pomáháte i se zahraničními investicemi?', a: 'Primárně se soustřeďujeme na český trh. Zahraniční projekty řešíme individuálně ve spolupráci s partnerskými poradci.' },
+      { q: 'Jak je to s LTV?', a: 'U investičních nemovitostí banky standardně financují 60–80 % hodnoty. S naší pomocí se daří dosáhnout horní hranice i nad ni.' }
+    ]
+  },
+  {
+    slug: 'poradenstvi-svj-obce',
+    num: '03',
+    name: 'Poradenství pro SVJ a obce',
+    icon: '🏛️',
+    shortDesc: 'Financování rekonstrukcí a modernizací bytových domů, obecních budov a infrastruktury.',
+    perks: ['Úvěry pro SVJ', 'Dotace a granty', 'Financování obcí'],
+    hero: 'Lepší podmínky pro bydlení a rozvoj komunity',
+    desc: [
+      'Společenství vlastníků jednotek a obce mají specifické potřeby financování – od zateplení bytových domů přes rekonstrukce společných prostor až po výstavbu infrastruktury.',
+      'Orientujeme se ve složité struktuře bankovních produktů určených právě pro SVJ a samosprávy. Kombinujeme bankovní úvěry s dostupnými dotačními tituly, čímž minimalizujeme náklady na financování.',
+      'Se stovkami realizovaných projektů pro bytová společenství a desítky obcí jako klienty víme, jak efektivně projít celým procesem od záměru po čerpání.'
+    ],
+    steps: [
+      { title: 'Definice potřeb', desc: 'Identifikujeme rozsah projektu a finanční možnosti společenství.' },
+      { title: 'Dotační audit', desc: 'Prověříme dostupné dotace (IROP, SFŽP, krajské programy).' },
+      { title: 'Zajištění financování', desc: 'Vyjednáme úvěr za výhodných podmínek u specializovaných bank.' },
+      { title: 'Administrativa', desc: 'Pomáháme s dokumentací nutnou pro banku i dotační orgán.' }
+    ],
+    faq: [
+      { q: 'Potřebujeme souhlas všech vlastníků?', a: 'Pro úvěr SVJ zpravidla postačí souhlas nadpoloviční většiny hlasů na shromáždění. Pomůžeme s přípravou podkladů.' },
+      { q: 'Lze kombinovat úvěr a dotaci?', a: 'Ano, a je to dokonce optimální přístup. Dotace snižuje potřebnou výši úvěru a tím i celkové náklady.' },
+      { q: 'Jak dlouho trvá celý proces?', a: 'Od konzultace po první čerpání zpravidla 3–6 měsíců v závislosti na dotačním programu.' }
+    ]
+  },
+  {
+    slug: 'projektove-financovani',
+    num: '04',
+    name: 'Projektové financování',
+    icon: '📐',
+    shortDesc: 'Vyhodnocení záměru, sestavení business plánu a vyjednání podmínek v bance.',
+    perks: ['Project finance', 'Syndikované úvěry', 'Mezzanine kapitál'],
+    hero: 'Velké projekty vyžadují chytré financování',
+    desc: [
+      'Projektové financování je specializovaná forma, kde úvěr je splácen z cashflow samotného projektu, nikoli z bilance sponzora. Tato struktura je ideální pro developer projekty, energetiku nebo infrastrukturu.',
+      'Sestavujeme komplexní finanční modely, pomáháme s výběrem vhodné struktury (syndikát bank, dluhopisy, mezzanine) a provázíme klienta celým procesem due diligence.',
+      'Naši partneři zahrnují přední české i mezinárodní banky, fondy soukromého kapitálu a institucionální investory. Jsme schopni zajistit financování od 50 mil. Kč.'
+    ],
+    steps: [
+      { title: 'Feasibility study', desc: 'Posouzení proveditelnosti a základní finanční modelování.' },
+      { title: 'Strukturace', desc: 'Návrh optimální kapitálové struktury a výběr nástrojů.' },
+      { title: 'Roadshow', desc: 'Prezentace projektu financujícím institucím a investorům.' },
+      { title: 'Uzavření a čerpání', desc: 'Finalizace smluv, plnění podmínek precedent a čerpání.' }
+    ],
+    faq: [
+      { q: 'Od jaké výše projektů pracujete?', a: 'Projektové financování zpravidla od 50 mil. Kč. Menší projekty řešíme jako standardní investiční úvěry.' },
+      { q: 'Jak dlouho trvá strukturace?', a: 'Příprava a uzavření transakce trvá typicky 6–18 měsíců v závislosti na složitosti projektu.' },
+      { q: 'Potřebujeme vlastní kapitál?', a: 'Zpravidla 20–30 % celkových nákladů projektu. Pomáháme i s hledáním equity investorů.' }
+    ]
+  },
+  {
+    slug: 'firemni-uvery',
+    num: '05',
+    name: 'Firemní úvěry a investice',
+    icon: '💼',
+    shortDesc: 'Financování rozvoje podnikání, nákupu technologií, strojů či expanze.',
+    perks: ['Bez zajištění do 5 mil. Kč', 'Splatnost až 10 let', 'Čerpání do 48 hodin'],
+    hero: 'Kapitál pro váš podnikatelský rozvoj',
+    desc: [
+      'Firemní úvěr je nejčastějším nástrojem pro financování podnikatelských záměrů – od nákupu technologií přes expanzi na nové trhy až po překlenutí sezónního výpadku likvidity.',
+      'Srovnáváme nabídky desítek bank a volíme tu, která nejlépe odpovídá vašim potřebám. Zohledňujeme nejen úrokovou sazbu, ale i poplatky, podmínky čerpání, zajišťovací požadavky a flexibilitu při mimořádných splátkách.',
+      'Díky objemu zprostředkovaných obchodů máme u partnerských bank preferenční podmínky, které individuální klient nezíská. Typicky dosahujeme sazeb o 0,5–1,5 % nižších oproti přímé žádosti.'
+    ],
+    steps: [
+      { title: 'Analýza potřeb', desc: 'Zjistíme přesný účel, výši a požadovanou strukturu úvěru.' },
+      { title: 'Příprava žádosti', desc: 'Sestavíme komplexní úvěrový záměr a sbíráme podklady.' },
+      { title: 'Výběr banky', desc: 'Oslovíme vhodné instituce a porovnáme nabídky.' },
+      { title: 'Čerpání', desc: 'Dovedeme proces k podpisu smlouvy a prvnímu čerpání.' }
+    ],
+    faq: [
+      { q: 'Jak rychle lze úvěr získat?', a: 'U menších úvěrů (do 5 mil. Kč) bez zajištění i do 5 pracovních dnů. Větší transakce trvají 3–8 týdnů.' },
+      { q: 'Potřebuji zajištění?', a: 'Záleží na výši a bonitě žadatele. Do 2–5 mil. Kč banky běžně půjčují bez nemovitostního zajištění.' },
+      { q: 'Jaké podklady potřebujete?', a: 'Zpravidla daňová přiznání za poslední 2 roky, výpis z účtu a aktuální rozvaha. Pomůžeme s kompletací.' }
+    ]
+  },
+  {
+    slug: 'refinancovani',
+    num: '06',
+    name: 'Refinancování a optimalizace',
+    icon: '🔄',
+    shortDesc: 'Kontrola stávajících úvěrů a hledání efektivnějších řešení.',
+    perks: ['Analýza stávajících úvěrů', 'Konsolidace závazků', 'Úspora nákladů'],
+    hero: 'Existující úvěry za lepších podmínek',
+    desc: [
+      'Trh se mění a podmínky, které byly před lety výhodné, nemusí být optimální dnes. Refinancování je příležitost resetovat finanční strukturu a ušetřit na nákladech.',
+      'Analyzujeme vaše stávající úvěrové smlouvy a identifikujeme potenciál pro úsporu – nižší úrokovou sazbu, delší splatnost, zrušení nevýhodných podmínek nebo konsolidaci více úvěrů do jednoho.',
+      'Typicky dosahujeme úspor 10–30 % celkových nákladů na financování. Pro firmu s úvěrovým zatížením 20 mil. Kč to může znamenat stovky tisíc korun ročně.'
+    ],
+    steps: [
+      { title: 'Audit stávajících úvěrů', desc: 'Detailní analýza podmínek všech stávajících závazků.' },
+      { title: 'Kalkulace úspor', desc: 'Vyčíslíme potenciální úsporu při refinancování.' },
+      { title: 'Výběr refinancující banky', desc: 'Najdeme nejvýhodnější nabídku na trhu.' },
+      { title: 'Realizace', desc: 'Zajistíme hladké refinancování včetně výmazu zástavních práv.' }
+    ],
+    faq: [
+      { q: 'Kdy se refinancování vyplatí?', a: 'Zpravidla pokud je rozdíl sazby alespoň 0,5 % nebo pokud potřebujete uvolnit nemovitost ze zástavy.' },
+      { q: 'Jsou s tím spojeny poplatky?', a: 'Stávající banka může účtovat poplatek za předčasné splacení. Kalkulujeme s nimi při posouzení výhodnosti.' },
+      { q: 'Lze refinancovat více úvěrů najednou?', a: 'Ano, konsolidace je velmi efektivní přístup – jeden úvěr, jedna splátka, nižší úroková zátěž.' }
+    ]
+  }
+];
+
+const PRODUCTS = [
+  { id:1, tab:'uvery', name:'KB Firemní úvěr Flexi', bank:'Komerční banka', rate:'5,9', rpsn:'6,2', maxAmount:'10 mil. Kč', subjekt:['sro','as'], perks:['Bez zajištění do 2 mil. Kč','Splatnost až 7 let','Čerpání do 48 h','Fixní i variabilní sazba'] },
+  { id:2, tab:'uvery', name:'ČSOB Business Loan', bank:'ČSOB', rate:'6,2', rpsn:'6,6', maxAmount:'20 mil. Kč', subjekt:['sro','as','osvc'], featured:true, perks:['Online žádost','Osobní poradce','Bez poplatku za vedení','Odklad splátek'] },
+  { id:3, tab:'uvery', name:'Raiffeisen Business Invest', bank:'Raiffeisen', rate:'6,5', rpsn:'6,9', maxAmount:'15 mil. Kč', subjekt:['sro','as'], perks:['Financování strojů a vybavení','Státní záruky ČMZRB','Bez skrytých poplatků','Rychlé schválení'] },
+  { id:4, tab:'uvery', name:'UniCredit SME Express', bank:'UniCredit', rate:'7,1', rpsn:'7,5', maxAmount:'5 mil. Kč', subjekt:['sro','as','osvc'], perks:['Bez zajištění','Online celý proces','Odpověď do 24 h','Min. administrativa'] },
+  { id:5, tab:'hypoteky', name:'Spořitelna Investiční hypotéka', bank:'Česká spořitelna', rate:'5,49', rpsn:'5,68', maxAmount:'50 mil. Kč', subjekt:['osvc','sro'], featured:true, perks:['LTV až 80 %','Fixace 1–10 let','Volný účel','Pojištění zdarma 1. rok'] },
+  { id:6, tab:'hypoteky', name:'ČSOB Developer Finance', bank:'ČSOB', rate:'5,85', rpsn:'6,1', maxAmount:'200 mil. Kč', subjekt:['sro','as'], perks:['Developer projekty','Flexibilní čerpání','Meziúvěr v ceně','Osobní správce'] },
+  { id:7, tab:'hypoteky', name:'Moneta Investment Loan', bank:'Moneta', rate:'5,99', rpsn:'6,22', maxAmount:'20 mil. Kč', subjekt:['osvc','sro'], perks:['Pronájmy i prodej','Online sjednání','Bez poplatku za vedení','Pojistné balíčky'] },
+  { id:8, tab:'hypoteky', name:'mBank Investiční úvěr', bank:'mBank', rate:'6,3', rpsn:'6,55', maxAmount:'10 mil. Kč', subjekt:['osvc'], perks:['Pro OSVČ','100% online','Bez pobočky','Rychlé schválení'] },
+  { id:9, tab:'refinancovani', name:'KB Refinancování Plus', bank:'Komerční banka', rate:'5,7', rpsn:'5,95', maxAmount:'30 mil. Kč', subjekt:['sro','as','osvc'], featured:true, perks:['Konsolidace až 5 úvěrů','Bez poplatku za splacení','Nové lepší podmínky','Výmaz zástavy v ceně'] },
+  { id:10, tab:'refinancovani', name:'Raiffeisen Refi Business', bank:'Raiffeisen', rate:'6,0', rpsn:'6,3', maxAmount:'50 mil. Kč', subjekt:['sro','as'], perks:['Individuální sazba','Rychlé schválení','Min. dokumentace','Fixace až 5 let'] },
+  { id:11, tab:'refinancovani', name:'Fio Refinanční balíček', bank:'Fio banka', rate:'6,4', rpsn:'6,7', maxAmount:'10 mil. Kč', subjekt:['sro','osvc'], perks:['Nízký poplatek','Transparentní ceník','Osobní poradce','Online správa'] },
+  { id:12, tab:'refinancovani', name:'ČSOB Optimalizace závazků', bank:'ČSOB', rate:'5,85', rpsn:'6,1', maxAmount:'100 mil. Kč', subjekt:['sro','as'], perks:['Velké portfolio','Syndikát bank','Odborný tým','Custom smlouva'] },
+  { id:13, tab:'svj', name:'Hypotéka pro SVJ', bank:'Česká spořitelna', rate:'4,99', rpsn:'5,15', maxAmount:'5 mil. Kč', subjekt:['svj'], featured:true, perks:['Speciálně pro SVJ','Bez ručení vlastníků','Kombinace s dotací','Splatnost 20 let'] },
+  { id:14, tab:'svj', name:'Úvěr SVJ Plus', bank:'ČSOB', rate:'5,2', rpsn:'5,4', maxAmount:'10 mil. Kč', subjekt:['svj','obec'], perks:['SVJ i bytová družstva','Zateplení a opravy','Dotační asistence','Flexibilní splátky'] },
+  { id:15, tab:'svj', name:'Komunální úvěr', bank:'Komerční banka', rate:'3,9', rpsn:'4,1', maxAmount:'100 mil. Kč', subjekt:['obec'], perks:['Pouze pro obce a města','Infrastruktura','Dotace EU v kombinaci','Dlouhá splatnost'] },
+  { id:16, tab:'svj', name:'Raiffeisen SVJ Invest', bank:'Raiffeisen', rate:'5,35', rpsn:'5,6', maxAmount:'8 mil. Kč', subjekt:['svj'], perks:['Rychlé schválení','Bez zajištění nemovitostí','Kombinace SFŽP','Online podpis'] }
+];
+
+const REFERENCES = [
+  { name:'Pan Malý', initials:'PM', type:'Hypotéka', text:'Vynikající zkušenost! S panem Klusákem jsem řešil sjednání hypotéky a vše proběhlo rychle a efektivně. Doporučuji každému, kdo hledá spolehlivého finančního poradce.', rating:5 },
+  { name:'Robert Šolc', initials:'RŠ', type:'Úvěr pro SVJ', text:'V roce 2024 jsme s panem Klusákem řešili úvěr na rekonstrukci střechy našeho SVJ. Vše proběhlo korektně a následně nám pan Sedláček pomohl s čerpáním. Profesionální přístup od začátku do konce.', rating:5 },
+  { name:'Miroslav Vodráško', initials:'MV', type:'Refinancování hypotéky', text:'Měl jsem hypotéku z doby, kdy byly úrokové sazby na maximu. Skvělá komunikace, rychlé jednání a hlavně reálný výsledek – ušetřil jsem tisíce měsíčně.', rating:5 },
+  { name:'Petra K.', initials:'PK', type:'Firemní úvěr', text:'Potřebovali jsme financovat nákup nového stroje pro výrobu. Tým fin-set nám připravil několik variant a vyjednal podmínky, které jsme přímo v bance nedostali.', rating:5 },
+  { name:'SVJ Brno-střed', initials:'SB', type:'Financování rekonstrukce', text:'Pomohli nám s financováním rekonstrukce bytového domu. Vše vysvětlili srozumitelně, poradili s dotacemi a celý proces vedli za nás.', rating:5 },
+  { name:'Tomáš H.', initials:'TH', type:'Projektové financování', text:'Spolupráce s fin-set nám umožnila realizovat developerský projekt, na který bychom sami v bance nedosáhli. Velmi oceňuji jejich znalost trhu i zkušenosti.', rating:5 }
+];
+
+const TIMELINE = [
+  { year:'2007', title:'Začátek v oboru', desc:'Začínáme působit ve finančním oboru. Sbíráme zkušenosti z bank i vlastního podnikání.' },
+  { year:'2017', title:'Specializace na úvěry', desc:'Zaměřujeme se na úvěry pro firmy, obce a jednotlivce. Vzniká koncept, který později nese jméno fin-set.' },
+  { year:'2020', title:'Spojení sil', desc:'Jan Klusák a David Sedláček spojují své zkušenosti a budují tým finančních specialistů.' },
+  { year:'2024', title:'Komplexní řešení', desc:'Realizujeme stovky úvěrových případů – hypotéky, firemní úvěry, projektové financování i SVJ.' },
+  { year:'2026', title:'fin-set.cz dnes', desc:'Tým finančních specialistů s 19 lety zkušeností v oboru. Pomáháme podnikatelům získat financování.' }
+];
+
+const STATS_HOME = [
+  { value:19, suffix:'+', label:'let zkušeností' },
+  { value:500, suffix:'+', label:'spokojených klientů' },
+  { value:12, suffix:'+', label:'bankovních partnerů' },
+  { value:98, suffix:'%', label:'míra doporučení' }
+];
+
+/* Bankovní partneři aktivní v podnikatelském financování v ČR.
+   Loga jsou hostována lokálně z img/banks/, originální brand identity. */
+const BANK_PARTNERS = [
+  { id:'kb',         name:'Komerční banka',   logo:'img/banks/kb.svg' },
+  { id:'csob',       name:'ČSOB',             logo:'img/banks/csob.svg' },
+  { id:'cs',         name:'Česká spořitelna', logo:'img/banks/cs.svg' },
+  { id:'unicredit',  name:'UniCredit Bank',   logo:'img/banks/unicredit.svg' },
+  { id:'raiffeisen', name:'Raiffeisenbank',   logo:'img/banks/raiffeisen.svg' },
+  { id:'moneta',     name:'MONETA Money Bank',logo:'img/banks/moneta.svg' },
+  { id:'fio',        name:'Fio banka',        logo:'img/banks/fio.svg' },
+  { id:'air',        name:'Air Bank',         logo:'img/banks/air.png' },
+  { id:'oberbank',   name:'Oberbank',         logo:'img/banks/oberbank.svg' },
+  { id:'ppf',        name:'PPF banka',        logo:'img/banks/ppf.svg' }
+];
+
+/* LinkedIn pseudo-feed – ručně udržovaný seznam posledních příspěvků.
+   Jakmile budete mít nový post, přidejte záznam na začátek pole. */
+const LINKEDIN_AUTHORS = {
+  klusak:   { name:'Jan Klusák',     initials:'JK', img:'img/jan-klusak.png',     title:'Zakladatel & Senior poradce',   url:'https://www.linkedin.com/in/honza-klusak/' },
+  sedlacek: { name:'David Sedláček', initials:'DS', img:'img/david-sedlacek.png', title:'Zakladatel & Obchodní ředitel', url:'https://www.linkedin.com/in/david-sedl%C3%A1%C4%8Dek-85b77a18a/' }
+};
+
+const LINKEDIN_POSTS = [
+  { author:'klusak',   date:'2026-03-28', text:'Sazby firemních úvěrů znovu klesly. U projektového financování dokážeme dnes vyjednat podmínky, které byly před rokem nemyslitelné. Pokud řešíte expanzi, ozvěte se – ukážu vám, kde reálně ušetřit.', tags:['#firemniuvery','#financovani'], url:'https://www.linkedin.com/in/honza-klusak/recent-activity/' },
+  { author:'sedlacek', date:'2026-03-15', text:'Refinancování hypotéky není jen o sazbě. Klient tento týden ušetřil 4 200 Kč měsíčně – ne kvůli nejlepší sazbě na trhu, ale díky správnému nastavení splatnosti a fixace. Poradenství má smysl.', tags:['#hypoteky','#refinancovani'], url:'https://www.linkedin.com/in/david-sedl%C3%A1%C4%8Dek-85b77a18a/recent-activity/' },
+  { author:'klusak',   date:'2026-02-22', text:'SVJ a financování rekonstrukcí: stát i kraje letos otevírají nové dotační tituly. Kombinace dotace + úvěru může pokrýt 80–90 % projektu. Pomáháme se vším od žádosti po čerpání.', tags:['#SVJ','#dotace'], url:'https://www.linkedin.com/in/honza-klusak/recent-activity/' },
+  { author:'sedlacek', date:'2026-02-05', text:'Banka vám řekla ne? V 7 z 10 případů to neznamená, že úvěr nedostanete – znamená to, že žádost nebyla správně připravená. Včera jsme schválili klienta, který měl předtím tři odmítnutí.', tags:['#hypoteky','#poradenstvi'], url:'https://www.linkedin.com/in/david-sedl%C3%A1%C4%8Dek-85b77a18a/recent-activity/' },
+  { author:'klusak',   date:'2026-01-18', text:'Začátek roku je ideální čas na revizi firemních úvěrů. Projděte si fixace, zajištění a kovenanty. Často se dá vyjednat lépe – stačí vědět, kde tlačit. Rád vám s tím pomůžu.', tags:['#firemnifinance'], url:'https://www.linkedin.com/in/honza-klusak/recent-activity/' }
+];
+
+/* ══════════════════════════════════════════
+   UTILS
+══════════════════════════════════════════ */
+const stars = (n=5) => Array(n).fill('<span class="ref-star">★</span>').join('');
+
+function subpageHero(breadcrumbItems, h1, desc='') {
+  const bc = breadcrumbItems.map((item,i) =>
+    i < breadcrumbItems.length-1
+      ? `<a href="${item.href}" onclick="navigate('${item.href}');return false">${item.label}</a><span class="breadcrumb-sep">›</span>`
+      : `<span>${item.label}</span>`
+  ).join('');
+  return `
+  <section class="hero-dark hero-subpage">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="container" style="position:relative">
+      <div class="breadcrumb">${bc}</div>
+      <h1>${h1}</h1>
+      ${desc ? `<p>${desc}</p>` : ''}
+    </div>
+  </section>`;
+}
+
+/* ══════════════════════════════════════════
+   PAGES
+══════════════════════════════════════════ */
+function renderHome() {
+  document.title = 'fin-set.cz | Finanční poradenství pro podnikatele';
+  document.querySelector('meta[name="description"]').content = 'Nezávislé finanční poradenství pro podnikatele. Firemní úvěry, projektové financování, refinancování. Brno.';
+
+  const featuredSlugs = ['firemni-uvery','projektove-financovani','refinancovani'];
+  const featured = SERVICES.filter(s => featuredSlugs.includes(s.slug));
+
+  return `
+  <!-- HERO – asymmetric editorial -->
+  <section class="hero-dark" style="min-height:92vh;display:flex;align-items:center;padding:calc(var(--nav-height) + 5rem) 0 5rem">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="container" style="position:relative">
+      <div class="hero-split">
+        <div>
+          <div class="eyebrow light"><span class="num">01</span> Finanční poradenství pro podnikatele</div>
+          <h1 class="display-xl" style="color:#fff;max-width:680px;margin-bottom:1.75rem">
+            Pomáháme<br>podnikatelům získat<br><em>financování.</em>
+          </h1>
+          <span class="gold-line"></span>
+          <p style="font-size:1.1rem;color:var(--text-muted-dark);max-width:520px;line-height:1.7;margin:1.75rem 0 2.5rem">
+            Od nápadu k realizaci – překládáme vaše plány do řeči bank a hledáme řešení, která šetří čas, peníze i nervy.
+          </p>
+          <div class="hero-cta-group" style="display:flex;flex-wrap:wrap;gap:1rem">
+            <a class="btn btn-primary btn-lg" href="/kontakt">Nezávazná konzultace →</a>
+            <a class="btn btn-outline btn-lg" href="/srovnavac">Spustit srovnávač</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-avatars">
+              <div class="trust-avatar a1"><img src="img/jan-klusak.png" alt="JK" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+              <div class="trust-avatar a2"><img src="img/david-sedlacek.png" alt="DS" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+              <div class="trust-avatar a3">PM</div>
+              <div class="trust-avatar a4">RŠ</div>
+            </div>
+            <div class="trust-text">
+              <div class="trust-stars">★★★★★</div>
+              <div><strong>500+</strong> spokojených klientů · 98% míra doporučení</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal delay-1">
+          <div class="hero-portrait">
+            <img src="img/jan-klusak.png" alt="Jan Klusák, zakladatel fin-set.cz">
+            <a class="hero-portrait-card" href="https://www.linkedin.com/in/honza-klusak/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profil – Jan Klusák">
+              <div class="pc-icon" aria-hidden="true">in</div>
+              <div>
+                <div class="pc-name">Jan Klusák</div>
+                <div class="pc-title">Zakladatel · 19 let v oboru</div>
+              </div>
+              <svg class="pc-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="stats-grid" style="margin-top:5rem;max-width:780px;border-top:1px solid rgba(255,255,255,.08);padding-top:3rem">
+        ${STATS_HOME.map((s,i) => `
+        <div class="stat-item reveal delay-${i}">
+          <div class="stat-number" data-counter="${s.value}" data-suffix="${s.suffix}">0${s.suffix}</div>
+          <div class="stat-label">${s.label}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO BAR -->
+  <div class="logo-bar">
+    <div class="container">
+      <p class="logo-bar-title">Spolupracujeme s 12+ bankami a nebankovními partnery</p>
+      <div class="logo-bar-logos">
+        ${BANK_PARTNERS.map(b=>`<span class="logo-badge" title="${b.name}"><img src="${b.logo}" alt="${b.name}" loading="lazy"></span>`).join('')}
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITORIAL QUOTE / NÁŠ PŘÍSTUP -->
+  <section class="section editorial-quote">
+    <div class="container">
+      <div class="eq-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="num">02</span> Náš přístup</div>
+          <p class="eq-quote">
+            „Banky vám neřeknou, kde je problém. <em>My ano.</em>"
+          </p>
+          <div class="eq-attribution">
+            <div class="eq-avatar"><img src="img/jan-klusak.png" alt="Jan Klusák"></div>
+            <div>
+              <div class="eq-name">Jan Klusák</div>
+              <div class="eq-role">Zakladatel fin-set.cz · 19 let v oboru</div>
+            </div>
+          </div>
+        </div>
+        <div class="eq-side reveal delay-1">
+          <div class="eq-side-item">
+            <div class="eq-side-num">— 01</div>
+            <h3 class="eq-side-title">Nezávislost</h3>
+            <p class="eq-side-desc">Pracujeme pro vás, ne pro banku. Porovnáme nabídky napříč trhem a vybereme to nejlepší řešení.</p>
+          </div>
+          <div class="eq-side-item">
+            <div class="eq-side-num">— 02</div>
+            <h3 class="eq-side-title">Rychlost</h3>
+            <p class="eq-side-desc">Žádné týdny čekání. První odpověď do 24 hodin, kompletní analýza do tří pracovních dnů.</p>
+          </div>
+          <div class="eq-side-item">
+            <div class="eq-side-num">— 03</div>
+            <h3 class="eq-side-title">Zkušenost</h3>
+            <p class="eq-side-desc">19 let v oboru, stovky úspěšně realizovaných případů. Víme, co banka skutečně potřebuje slyšet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SERVICES — bento -->
+  <section class="section" style="background:var(--bg-light)">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow"><span class="num">03</span> Co děláme nejlépe</div>
+          <h2 class="display-lg" style="color:#1A1410">Služby, které <em>posouvají firmy.</em></h2>
+        </div>
+        <div class="sh-right">
+          <p>Vyberte si z portfolia služeb, které pomohly stovkám podnikatelů získat financování za nejlepších podmínek.</p>
+        </div>
+      </div>
+      <div class="bento-grid">
+        ${featured.map((s,i) => `
+        <div class="service-card reveal delay-${i}">
+          <div class="service-icon">${s.icon}</div>
+          <h3 style="color:var(--text-primary);font-size:1.15rem;margin-bottom:.5rem">${s.name}</h3>
+          <p>${s.shortDesc}</p>
+          <a class="service-link" href="/sluzby/${s.slug}">Zjistit více →</a>
+        </div>`).join('')}
+      </div>
+      <div style="text-align:center;margin-top:3rem">
+        <a class="btn btn-outline-blue" href="/sluzby">Zobrazit všechny služby</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS PREVIEW – jansusanka style image+text -->
+  <section class="section founders-preview">
+    <div class="container">
+      <div class="fp-grid">
+        <div class="reveal" style="position:relative">
+          <div class="fp-decor"></div>
+          <div class="fp-images">
+            <div class="fp-img fp-img-1"><img src="img/jan-klusak.png" alt="Jan Klusák"></div>
+            <div class="fp-img fp-img-2"><img src="img/david-sedlacek.png" alt="David Sedláček"></div>
+          </div>
+        </div>
+        <div class="fp-text reveal delay-1">
+          <div class="eyebrow"><span class="num">04</span> Lidé za fin-set.cz</div>
+          <h2 class="display-lg" style="color:#1A1410">Dva zakladatelé.<br><em>Jeden cíl.</em></h2>
+          <p style="margin-top:1.5rem"><strong>Jan Klusák</strong> a <strong>David Sedláček</strong> spojili své zkušenosti z bank i vlastního podnikání. Společně tvoří tým, který rozumí oběma stranám stolu – a ví, kde se dá vyjednat víc.</p>
+          <p>Od roku 2007 v oboru, od roku 2017 specializace na úvěry pro firmy, obce a SVJ. Stovky realizovaných případů, 50+ bankovních partnerů, 98% míra doporučení.</p>
+          <div class="fp-mini-stats">
+            <div class="fp-mini-stat"><div class="fp-mini-stat-num">19+</div><div class="fp-mini-stat-lab">let praxe</div></div>
+            <div class="fp-mini-stat"><div class="fp-mini-stat-num">500+</div><div class="fp-mini-stat-lab">klientů</div></div>
+          </div>
+          <a class="btn btn-outline-blue" href="/o-nas">Poznejte tým →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div class="section-header dark">
+        <div>
+          <div class="eyebrow light"><span class="num">05</span> Proč fin-set.cz</div>
+          <h2 class="display-lg" style="color:#fff">Čísla, která <em>nás definují.</em></h2>
+        </div>
+        <div class="sh-right"><p>Devatenáct let praxe, stovky úspěšně realizovaných případů a desítky bankovních partnerů – to není marketing, to jsou fakta.</p></div>
+      </div>
+      <div class="grid-4">
+        ${[{num:'17',lab:'let na trhu',desc:'Zkušenosti získané od roku 2007 ve všech tržních cyklech.'},
+           {num:'500+',lab:'spokojených klientů',desc:'Od OSVČ po developer skupiny s miliardovými projekty.'},
+           {num:'2007',lab:'rok vzniku',desc:'Jsme tu s vámi přes krize, covidová léta i boom trhu.'},
+           {num:'50+',lab:'bankovních partnerů',desc:'Přístup k celému trhu, ne jen k jedné bance.'}
+        ].map((item,i)=>`
+        <div class="reveal delay-${i}" style="text-align:center;padding:1.5rem;background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg)">
+          <div style="font-family:var(--font-heading);font-size:clamp(2.5rem,5vw,3.5rem);color:var(--accent-gold);line-height:1;margin-bottom:.4rem">${item.num}</div>
+          <div style="font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.4rem">${item.lab}</div>
+          <div style="font-size:.82rem;color:var(--text-muted-dark);line-height:1.5">${item.desc}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES STRIP -->
+  <section class="section" style="background:var(--bg-surface)">
+    <div class="container">
+      <div class="section-header dark">
+        <div>
+          <div class="eyebrow light"><span class="num">06</span> Reference</div>
+          <h2 class="display-lg" style="color:#fff">Co říkají <em>naši klienti.</em></h2>
+        </div>
+        <div class="sh-right"><p>Skutečné příběhy podnikatelů a SVJ, kterým jsme pomohli získat financování za výhodnějších podmínek, než nabízela banka.</p></div>
+      </div>
+      <div class="grid-3">
+        ${REFERENCES.slice(0,3).map((r,i)=>`
+        <div class="ref-card ref-card-dark reveal delay-${i}">
+          <div class="ref-stars">${stars()}</div>
+          <p class="ref-text">${r.text}</p>
+          <div class="ref-meta">
+            <div class="ref-avatar">${r.initials}</div>
+            <div>
+              <div class="ref-name" style="color:#fff">${r.name}</div>
+              <div class="ref-type">${r.type}</div>
+            </div>
+          </div>
+        </div>`).join('')}
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a class="btn btn-outline" href="/reference" onclick="navigate('/reference');return false">Všechny reference</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+      <h2>Máte projekt? Pojďme si promluvit.</h2>
+      <p>Nezávazná konzultace je zdarma. Zjistěte, jak vám můžeme pomoci.</p>
+      <a class="btn btn-gold btn-lg" href="/kontakt" onclick="navigate('/kontakt');return false">Kontaktujte nás →</a>
+    </div>
+  </div>`;
+}
+
+/* ── SERVICES LIST ── */
+function renderSluzby() {
+  document.title = 'Služby | fin-set.cz';
+  document.querySelector('meta[name="description"]').content = 'Přehled všech finančních služeb pro podnikatele – firemní úvěry, projektové financování, SVJ a obce, refinancování.';
+
+  return `
+  ${subpageHero([{href:'/',label:'Domů'},{href:'/sluzby',label:'Služby'}],'Naše služby','Vše, co potřebujete pro finanční úspěch vašeho podnikání.')}
+
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div class="grid-2" style="gap:2rem">
+        ${SERVICES.map((s,i)=>`
+        <div class="service-card service-card-dark reveal delay-${i%2}">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+            <span class="service-num">${s.num}</span>
+            <div class="service-icon" style="margin-bottom:0">${s.icon}</div>
+          </div>
+          <h3 style="font-size:1.25rem;margin-bottom:.6rem">${s.name}</h3>
+          <p>${s.shortDesc}</p>
+          <ul class="service-checklist">
+            ${s.perks.map(p=>`<li>${p}</li>`).join('')}
+          </ul>
+          <a class="btn btn-outline-blue btn-sm" href="/sluzby/${s.slug}" onclick="navigate('/sluzby/${s.slug}');return false">Více o této službě →</a>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div class="container">
+      <h2>Nenašli jste, co hledáte?</h2>
+      <p>Ozvěte se nám – řešíme i nestandardní situace.</p>
+      <a class="btn btn-gold btn-lg" href="/kontakt" onclick="navigate('/kontakt');return false">Napište nám</a>
+    </div>
+  </div>`;
+}
+
+/* ── SERVICE DETAIL ── */
+function renderSluzbaDetail(matches) {
+  const slug = matches[1];
+  const service = SERVICES.find(s => s.slug === slug);
+  if (!service) return render404();
+
+  document.title = `${service.name} | fin-set.cz`;
+  document.querySelector('meta[name="description"]').content = service.shortDesc;
+
+  return `
+  ${subpageHero([{href:'/',label:'Domů'},{href:'/sluzby',label:'Služby'},{href:'/sluzby/'+slug,label:service.name}], service.hero, service.shortDesc)}
+
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-body">
+          ${service.desc.map(p=>`<p>${p}</p>`).join('')}
+
+          <h2>Jak to funguje</h2>
+          <div class="detail-steps">
+            ${service.steps.map((step,i)=>`
+            <div class="detail-step">
+              <div class="detail-step-num">${i+1}</div>
+              <div class="detail-step-text">
+                <h4>${step.title}</h4>
+                <p>${step.desc}</p>
+              </div>
+            </div>`).join('')}
+          </div>
+
+          <h2>Časté otázky</h2>
+          <div class="accordion">
+            ${service.faq.map(item=>`
+            <div class="accordion-item">
+              <button class="accordion-header">${item.q}<span class="accordion-icon">+</span></button>
+              <div class="accordion-body"><p>${item.a}</p></div>
+            </div>`).join('')}
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-card">
+            <h3>Mám zájem</h3>
+            <form class="sidebar-form" id="sidebar-form" data-service="${service.name}">
+              <div class="form-group">
+                <label>Jméno a příjmení</label>
+                <input type="text" name="name" placeholder="Jan Novák" required>
+                <span class="form-error-msg">Povinné pole</span>
+              </div>
+              <div class="form-group">
+                <label>Telefon</label>
+                <input type="tel" name="phone" placeholder="+420 777 123 456" required>
+                <span class="form-error-msg">Povinné pole</span>
+              </div>
+              <div class="form-group">
+                <label>Zpráva</label>
+                <textarea name="message" rows="3" style="resize:vertical">Mám zájem o ${service.name}.</textarea>
+                <span class="form-error-msg"></span>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%">Odeslat poptávku</button>
+            </form>
+            <div class="form-success" id="sidebar-success">
+              <div class="form-success-icon">✓</div>
+              <h3>Odesláno!</h3>
+              <p>Ozveme se vám do 24 hodin.</p>
+            </div>
+            <div class="sidebar-contact">
+              <a href="tel:+420775939596">📞 +420 775 939 596</a>
+              <a href="mailto:info@fin-set.cz">✉ info@fin-set.cz</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ── COMPARATOR ── */
+function renderSrovnavac() {
+  document.title = 'Srovnávač produktů | fin-set.cz';
+  document.querySelector('meta[name="description"]').content = 'Srovnejte finanční produkty – firemní úvěry, hypotéky, refinancování, SVJ a obce. Najděte nejlepší financování.';
+
+  return `
+  ${subpageHero([{href:'/',label:'Domů'},{href:'/srovnavac',label:'Srovnávač'}],'Srovnejte finanční produkty','Najděte nejlepší financování pro váš projekt na základě reálných nabídek.')}
+
+  <div class="comp-panel">
+    <div class="container">
+      <div class="comp-panel-inner">
+        <div class="comp-tabs" id="compTabs">
+          <button class="comp-tab active" data-tab="uvery">Firemní úvěry</button>
+          <button class="comp-tab" data-tab="hypoteky">Hypotéky</button>
+          <button class="comp-tab" data-tab="refinancovani">Refinancování</button>
+          <button class="comp-tab" data-tab="svj">SVJ / Obce</button>
+        </div>
+        <div class="comp-filter-group">
+          <label>Výše: <span id="compAmountLabel" class="comp-amount-label">5 000 000 Kč</span></label>
+          <input type="range" id="compAmount" min="500000" max="50000000" step="500000" value="5000000">
+        </div>
+        <div class="comp-filter-group">
+          <label>Subjekt:</label>
+          <select id="compSubjekt">
+            <option value="all">Všechny</option>
+            <option value="osvc">OSVČ</option>
+            <option value="sro">s.r.o.</option>
+            <option value="as">a.s.</option>
+            <option value="svj">SVJ</option>
+            <option value="obec">Obec</option>
+          </select>
+        </div>
+        <button class="comp-reset" id="compReset">Resetovat filtry</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="comp-grid" id="compGrid"></div>
+  </div>`;
+}
+
+/* ── ABOUT ── */
+function renderLinkedinFeed() {
+  const fmt = (iso) => {
+    const d = new Date(iso);
+    const months = ['ledna','února','března','dubna','května','června','července','srpna','září','října','listopadu','prosince'];
+    return `${d.getDate()}. ${months[d.getMonth()]} ${d.getFullYear()}`;
+  };
+  return `<div class="li-grid">${LINKEDIN_POSTS.map(p => {
+    const a = LINKEDIN_AUTHORS[p.author] || {};
+    return `<a class="li-card" href="${p.url}" target="_blank" rel="noopener">
+      <div class="li-head">
+        <div class="li-avatar">${a.img ? `<img src="${a.img}" alt="${a.name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">` : (a.initials || '?')}</div>
+        <div>
+          <div class="li-author">${a.name || ''}</div>
+          <div class="li-title">${a.title || ''}</div>
+          <div class="li-date">${fmt(p.date)}</div>
+        </div>
+      </div>
+      <div class="li-text">${p.text}</div>
+      <div class="li-tags">${(p.tags||[]).map(t=>`<span class="li-tag">${t}</span>`).join('')}</div>
+      <div class="li-foot">
+        <span><span class="li-logo">in</span> &nbsp;Číst na LinkedIn</span>
+        <span>→</span>
+      </div>
+    </a>`;
+  }).join('')}</div>`;
+}
+
+function renderONas() {
+  document.title = 'O nás | fin-set.cz';
+  document.querySelector('meta[name="description"]').content = 'Tým finančních specialistů působící v oboru od roku 2007. Od roku 2017 se specializujeme na úvěry pro firmy, obce a jednotlivce.';
+
+  return `
+  ${subpageHero([{href:'/',label:'Domů'},{href:'/o-nas',label:'O nás'}],'Jsme na vaší straně.','V oboru od roku 2007. Kombinujeme praxi z bank i vlastního podnikání.')}
+
+  <!-- STORY -->
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div style="max-width:740px;margin:0 auto;text-align:center;margin-bottom:4rem" class="reveal">
+        <p class="section-label">Náš příběh</p>
+        <h2 class="section-title light">Od bankovních lavic k vlastní praxi</h2>
+        <p style="font-size:1rem;color:var(--text-muted-dark);line-height:1.75">
+          Jsme tým finančních specialistů působících v oboru od roku 2007. Od roku 2017 se zaměřujeme
+          především na úvěry pro firmy, obce a jednotlivce. Kombinujeme zkušenosti z bank
+          s praxí vlastního podnikání – díky tomu rozumíme oběma stranám stolu a víme, co banka skutečně potřebuje slyšet.
+        </p>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="timeline">
+        ${TIMELINE.map((item,i)=>`
+        <div class="timeline-item reveal">
+          <div class="timeline-left ${i%2===0?'':'empty'}">
+            ${i%2===0?`<div class="timeline-year">${item.year}</div><div class="timeline-title">${item.title}</div><div class="timeline-desc">${item.desc}</div>`:''}
+          </div>
+          <div class="timeline-dot" style="margin:0 auto">●</div>
+          <div class="timeline-right">
+            ${i%2===1?`<div class="timeline-year">${item.year}</div><div class="timeline-title">${item.title}</div><div class="timeline-desc">${item.desc}</div>`:''}
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" style="background:var(--bg-surface)">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:2.5rem">
+        <p class="section-label">Tým</p>
+        <h2 class="section-title light">Lidé za fin-set.cz</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar"><img src="img/jan-klusak.png" alt="Jan Klusák" loading="lazy"></div>
+          <div class="team-name">Jan Klusák</div>
+          <div class="team-title">Zakladatel & Senior poradce</div>
+          <p class="team-bio">V oboru financování od roku 2007. Specialista na úvěry pro firmy, SVJ a obce. Klienti oceňují jeho rychlé jednání, srozumitelnou komunikaci a schopnost najít řešení i tam, kde to v bance napoprvé nevyšlo.</p>
+          <a class="team-linkedin" href="https://www.linkedin.com/in/honza-klusak/" target="_blank" rel="noopener">⇒ LinkedIn profil</a>
+        </div>
+        <div class="team-card reveal delay-1">
+          <div class="team-avatar" style="background:linear-gradient(135deg,var(--accent-gold),#B45309)"><img src="img/david-sedlacek.png" alt="David Sedláček" loading="lazy"></div>
+          <div class="team-name">David Sedláček</div>
+          <div class="team-title">Zakladatel & Obchodní ředitel</div>
+          <p class="team-bio">Expert na hypoteční poradenství, refinancování a čerpání úvěrů pro SVJ. Vede klienty celým procesem od první kalkulace až po podpis smlouvy a následný servis. Certifikovaný poradce s registrací ČNB.</p>
+          <a class="team-linkedin" href="https://www.linkedin.com/in/david-sedl%C3%A1%C4%8Dek-85b77a18a/" target="_blank" rel="noopener">⇒ LinkedIn profil</a>
+        </div>
+      </div>
+      <blockquote style="text-align:center;margin-top:3rem;font-family:var(--font-heading);font-size:clamp(1.25rem,3vw,1.75rem);font-style:italic;color:rgba(255,255,255,.7);max-width:640px;margin-left:auto;margin-right:auto" class="reveal">
+        „Banky vám neřeknou, kde je problém. My ano."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- LINKEDIN FEED -->
+  <section class="section" style="background:linear-gradient(180deg,#f3f4f6 0%,#e5e7eb 100%);color:#1f2937">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:1rem">
+        <p class="section-label" style="color:#0A66C2">
+          <span class="li-logo">in</span> &nbsp;Aktivita na LinkedIn
+        </p>
+        <h2 class="section-title" style="color:#111827">Co aktuálně sdílíme</h2>
+        <p style="font-size:1rem;color:#4b5563;max-width:600px;margin:1rem auto 0">
+          Sledujte naše příspěvky o úvěrech, hypotékách, sazbách a financování firem přímo na LinkedIn.
+        </p>
+      </div>
+      ${renderLinkedinFeed()}
+      <div class="text-center" style="margin-top:2.5rem">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/honza-klusak/" target="_blank" rel="noopener">
+          <span class="li-logo">in</span> &nbsp;Sledovat na LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:2.5rem">
+        <p class="section-label">Hodnoty</p>
+        <h2 class="section-title light">Na čem stavíme</h2>
+      </div>
+      <div class="grid-4">
+        ${[{icon:'🤝',title:'Upřímnost',desc:'Říkáme pravdu, i když to není to, co chcete slyšet.'},
+           {icon:'🎓',title:'Odbornost',desc:'Neustálé vzdělávání a sledování vývoje trhu.'},
+           {icon:'🔗',title:'Partnerství',desc:'Váš úspěch je náš úspěch. Dlouhodobé vztahy.'},
+           {icon:'🏆',title:'Výsledky',desc:'Hodnotíme se podle výsledků, ne podle počtu schůzek.'}
+        ].map((v,i)=>`
+        <div class="value-card reveal delay-${i}">
+          <div class="value-icon">${v.icon}</div>
+          <div class="value-title">${v.title}</div>
+          <p class="value-desc">${v.desc}</p>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT -->
+  <section class="section-sm" style="background:var(--bg-surface)">
+    <div class="container">
+      <div style="max-width:600px;margin:0 auto">
+        <div class="cert-box reveal">
+          <div class="cert-icon">🏛️</div>
+          <div class="cert-body">
+            <h4>Licencovaný zprostředkovatel</h4>
+            <p>Vázaný zástupce registrovaný v ČNB · IČO: 76295958<br>
+            Pracujeme pod záštitou Broker Trust a.s. · IČO: 26439719<br>
+            Pojišťovací i investiční zprostředkování dle zákona č. 170/2018 Sb.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ── REFERENCES ── */
+function renderReference() {
+  document.title = 'Reference | fin-set.cz';
+  document.querySelector('meta[name="description"]').content = 'Reference a recenze klientů fin-set.cz. 98% spokojených klientů, hodnocení 4,9/5.';
+
+  return `
+  ${subpageHero([{href:'/',label:'Domů'},{href:'/reference',label:'Reference'}],'Co o nás říkají klienti','Přečtěte si zkušenosti podnikatelů, SVJ a obcí, kterým jsme pomohli.')}
+
+  <!-- STATS -->
+  <div style="background:var(--bg-card);border-bottom:1px solid var(--border-dark);padding:2rem 0">
+    <div class="container">
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3rem;text-align:center">
+        ${[{v:'98 %',l:'spokojených klientů'},{v:'4,9/5',l:'průměrné hodnocení'},{v:'500+',l:'realizovaných případů'}].map(s=>`
+        <div>
+          <div style="font-family:var(--font-heading);font-size:2.25rem;color:var(--accent-gold)">${s.v}</div>
+          <div style="font-size:.85rem;color:var(--text-muted-dark)">${s.l}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div class="grid-3">
+        ${REFERENCES.map((r,i)=>`
+        <div class="ref-card ref-card-dark reveal delay-${i%3}">
+          <div class="ref-stars">${stars(r.rating)}</div>
+          <p class="ref-text">"${r.text}"</p>
+          <div class="ref-meta">
+            <div class="ref-avatar">${r.initials}</div>
+            <div>
+              <div class="ref-name" style="color:#fff">${r.name}</div>
+              <div class="ref-type">${r.type}</div>
+            </div>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div class="container">
+      <h2>Chcete být mezi spokojenými klienty?</h2>
+      <p>Kontaktujte nás a zjistěte, co pro vás můžeme udělat.</p>
+      <a class="btn btn-gold btn-lg" href="/kontakt" onclick="navigate('/kontakt');return false">Kontaktovat</a>
+    </div>
+  </div>`;
+}
+
+/* ── CONTACT ── */
+function renderKontakt(m, search) {
+  document.title = 'Kontakt | fin-set.cz';
+  document.querySelector('meta[name="description"]').content = 'Kontaktujte fin-set.cz – bezplatná konzultace, finanční poradenství pro podnikatele. Brno.';
+
+  const params = new URLSearchParams(search || '');
+  const preFill = params.get('produkt') ? `Mám zájem o produkt: ${params.get('produkt')}.` : '';
+
+  return `
+  ${subpageHero([{href:'/',label:'Domů'},{href:'/kontakt',label:'Kontakt'}],'Pojďme si promluvit.','Prvotní konzultace je zdarma a nezávazná.')}
+
+  <section class="section" style="background:var(--bg-dark)">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- FORM -->
+        <div>
+          <form id="contact-form">
+            <div class="grid-2" style="gap:1rem">
+              <div class="form-group">
+                <label>Jméno a příjmení *</label>
+                <input type="text" name="name" placeholder="Jan Novák" required>
+                <span class="form-error-msg">Povinné pole</span>
+              </div>
+              <div class="form-group">
+                <label>E-mail *</label>
+                <input type="email" name="email" placeholder="jan@firma.cz" required>
+                <span class="form-error-msg">Zadejte platný e-mail</span>
+              </div>
+            </div>
+            <div class="grid-2" style="gap:1rem">
+              <div class="form-group">
+                <label>Telefon *</label>
+                <input type="tel" name="phone" placeholder="+420 777 123 456" required>
+                <span class="form-error-msg">Zadejte platný telefon</span>
+              </div>
+              <div class="form-group">
+                <label>Typ poptávky</label>
+                <select name="type">
+                  <option value="">Vyberte...</option>
+                  <option>Firemní úvěr</option>
+                  <option>Hypotéka / Investiční nemovitost</option>
+                  <option>Refinancování</option>
+                  <option>SVJ / Obec</option>
+                  <option>Projektové financování</option>
+                  <option>Jiné</option>
+                </select>
+                <span class="form-error-msg"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Zpráva</label>
+              <textarea name="message" rows="5" placeholder="Popište váš záměr...">${preFill}</textarea>
+              <span class="form-error-msg"></span>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="gdpr" name="gdpr" required>
+              <label for="gdpr">Souhlasím se zpracováním osobních údajů za účelem odpovězení na mou poptávku. <a href="#" style="color:var(--accent-blue)">Více informací</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Odeslat poptávku →</button>
+          </form>
+          <div class="form-success" id="contact-success" style="background:var(--bg-card);border:1px solid var(--border-dark);border-radius:var(--radius-lg)">
+            <div class="form-success-icon">✓</div>
+            <h3>Zpráva odeslána!</h3>
+            <p>Ozveme se vám do 24 hodin v pracovní dny.</p>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <div class="contact-info-item reveal">
+            <div class="contact-info-icon">✉</div>
+            <div>
+              <div class="contact-info-label">E-mail</div>
+              <div class="contact-info-value"><a href="mailto:info@fin-set.cz">info@fin-set.cz</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal delay-1">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <div class="contact-info-label">Telefon</div>
+              <div class="contact-info-value"><a href="tel:+420775939596">+420 775 939 596</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal delay-2">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <div class="contact-info-label">Sídlo</div>
+              <div class="contact-info-value">Brno, Jihomoravský kraj</div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal delay-3">
+            <div class="contact-info-icon">⏰</div>
+            <div>
+              <div class="contact-info-label">Pracovní doba</div>
+              <div class="contact-info-value">
+                <table class="hours-table">
+                  <tr><td>Po – Pá</td><td style="padding-left:1rem">8:00 – 18:00</td></tr>
+                  <tr><td>So – Ne</td><td style="padding-left:1rem">Na domluvě</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-placeholder reveal">
+            <div class="map-placeholder-icon">🗺</div>
+            <p><strong>Brno, Jihomoravský kraj</strong><br>Konzultace probíhají osobně v Brně<br>nebo online přes videohovor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ── 404 ── */
+function render404() {
+  document.title = '404 | fin-set.cz';
+  return `
+  <div class="not-found">
+    <h1>404</h1>
+    <h2>Stránka nenalezena</h2>
+    <p>Stránka, kterou hledáte, neexistuje.</p>
+    <a class="btn btn-primary" href="/" onclick="navigate('/');return false">← Zpět na hlavní stránku</a>
+  </div>`;
+}
+
+/* ══════════════════════════════════════════
+   ROUTER
+══════════════════════════════════════════ */
+const ROUTES = [
+  { pattern: /^\/$/, render: (m,s) => renderHome(m,s) },
+  { pattern: /^\/sluzby$/, render: (m,s) => renderSluzby(m,s) },
+  { pattern: /^\/sluzby\/([\w-]+)$/, render: (m,s) => renderSluzbaDetail(m,s) },
+  { pattern: /^\/srovnavac$/, render: (m,s) => renderSrovnavac(m,s) },
+  { pattern: /^\/o-nas$/, render: (m,s) => renderONas(m,s) },
+  { pattern: /^\/reference$/, render: (m,s) => renderReference(m,s) },
+  { pattern: /^\/kontakt$/, render: (m,s) => renderKontakt(m,s) }
+];
+
+// Hash-based routing — works in any environment (file://, preview sandboxes, subpaths)
+function getCurrentPath() {
+  const h = (location.hash || '').replace(/^#/, '');
+  return h || '/';
+}
+
+function navigate(path) {
+  if (!path) path = '/';
+  if (path.startsWith('#')) path = path.slice(1);
+  // Strip any absolute URL parts
+  if (path.includes('://')) return;
+  const current = getCurrentPath();
+  if (current === path) {
+    dispatch(path);
+  } else {
+    // Setting hash triggers hashchange → dispatch
+    location.hash = path;
+  }
+}
+
+function dispatch(path) {
+  // Strip query string and trailing slash before route matching
+  const queryIdx = path.indexOf('?');
+  const search = queryIdx >= 0 ? path.slice(queryIdx) : '';
+  let pathname = (queryIdx >= 0 ? path.slice(0, queryIdx) : path).replace(/\/+$/, '') || '/';
+
+  const app = document.getElementById('app');
+  if (!app) return;
+  app.classList.add('page-exit');
+
+  setTimeout(() => {
+    let html = render404();
+    for (const route of ROUTES) {
+      const m = pathname.match(route.pattern);
+      if (m) {
+        try { html = route.render(m, search); } catch(e) { console.error(e); html = render404(); }
+        break;
+      }
+    }
+    app.innerHTML = html;
+    app.classList.remove('page-exit');
+    app.classList.add('page-enter');
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      app.classList.remove('page-enter');
+      initReveal();
+      initCounters();
+      initAccordions();
+      initForms();
+      if (document.getElementById('compGrid')) initComp();
+      updateNavActive(pathname);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }));
+  }, 150);
+}
+
+window.addEventListener('hashchange', () => dispatch(getCurrentPath()));
+
+// Global click delegation – catches ALL internal links regardless of how they were injected
+document.addEventListener('click', function(e) {
+  const a = e.target.closest('a[href]');
+  if (!a) return;
+  let href = a.getAttribute('href');
+  if (!href) return;
+  // Skip external, mailto, tel, hash-only (to same page)
+  if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//')) return;
+  // Accept both "/sluzby" and "#/sluzby"
+  if (href.startsWith('#')) href = href.slice(1);
+  if (!href.startsWith('/')) return;
+  e.preventDefault();
+  e.stopPropagation();
+  closeMobileMenu();
+  navigate(href);
+});
+
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+function updateNavActive(path) {
+  document.querySelectorAll('#nav .nav-links a').forEach(a => {
+    const href = a.getAttribute('href');
+    const isActive = href === path || (href !== '/' && path.startsWith(href));
+    a.classList.toggle('active', isActive);
+  });
+}
+
+function closeMobileMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ══════════════════════════════════════════
+   COMPARATOR
+══════════════════════════════════════════ */
+let compState = { tab: 'uvery', amount: 5000000, subjekt: 'all' };
+
+function renderCompWithUI() {
+  const subj = document.getElementById('compSubjekt');
+  if (subj) compState.subjekt = subj.value;
+  const amt = document.getElementById('compAmount');
+  if (amt) {
+    compState.amount = parseInt(amt.value);
+    const label = document.getElementById('compAmountLabel');
+    if (label) label.textContent = new Intl.NumberFormat('cs-CZ').format(compState.amount) + ' Kč';
+  }
+  renderCompResults();
+}
+
+function renderCompResults() {
+  const subjekt = document.getElementById('compSubjekt');
+  if (subjekt) compState.subjekt = subjekt.value;
+
+  const filtered = PRODUCTS.filter(p => {
+    if (p.tab !== compState.tab) return false;
+    if (compState.subjekt !== 'all' && !p.subjekt.includes(compState.subjekt)) return false;
+    return true;
+  });
+
+  const grid = document.getElementById('compGrid');
+  if (!grid) return;
+
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="comp-empty">Žádné produkty neodpovídají zvoleným filtrům.</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(p => `
+  <div class="comp-card${p.featured?' featured':''}">
+    <div class="comp-card-header">
+      <div>
+        <div class="comp-bank">${p.bank}</div>
+        <div class="comp-name">${p.name}</div>
+      </div>
+      ${p.featured ? '<span class="badge-featured">Doporučujeme</span>' : ''}
+    </div>
+    <div class="comp-rates">
+      <div class="comp-rate-item">
+        <div class="comp-rate-val">${p.rate} %</div>
+        <div class="comp-rate-label">Úroková sazba</div>
+      </div>
+      <div class="comp-rate-item">
+        <div class="comp-rate-val" style="font-size:1.25rem;color:var(--text-muted-dark)">${p.rpsn} %</div>
+        <div class="comp-rate-label">RPSN</div>
+      </div>
+    </div>
+    <div class="comp-max">Max. výše: <strong>${p.maxAmount}</strong></div>
+    <div class="comp-perks">
+      ${p.perks.map(perk => `<div class="comp-perk">${perk}</div>`).join('')}
+    </div>
+    <a class="btn btn-primary" style="width:100%;justify-content:center" href="/kontakt?produkt=${encodeURIComponent(p.name)}" onclick="navigate('/kontakt?produkt=${encodeURIComponent(p.name)}');return false">Chci tuto nabídku →</a>
+  </div>`).join('');
+}
+
+function initComp() {
+  // Tabs
+  document.querySelectorAll('.comp-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.comp-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      compState.tab = btn.dataset.tab;
+      renderCompWithUI();
+    });
+  });
+  // Amount slider
+  const amt = document.getElementById('compAmount');
+  if (amt) amt.addEventListener('input', renderCompWithUI);
+  // Subject dropdown
+  const subj = document.getElementById('compSubjekt');
+  if (subj) subj.addEventListener('change', renderCompWithUI);
+  // Reset
+  const reset = document.getElementById('compReset');
+  if (reset) reset.addEventListener('click', () => {
+    compState = { tab: 'uvery', amount: 5000000, subjekt: 'all' };
+    if (amt) amt.value = 5000000;
+    if (subj) subj.value = 'all';
+    document.querySelectorAll('.comp-tab').forEach((b,i) => b.classList.toggle('active', i===0));
+    const label = document.getElementById('compAmountLabel');
+    if (label) label.textContent = '5 000 000 Kč';
+    renderCompResults();
+  });
+  // Initial render
+  compState = { tab: 'uvery', amount: 5000000, subjekt: 'all' };
+  renderCompResults();
+}
+
+/* ══════════════════════════════════════════
+   FORMS
+══════════════════════════════════════════ */
+function validateField(el) {
+  const group = el.closest('.form-group');
+  if (!group) return true;
+  let err = '';
+  if (el.required && !el.value.trim()) err = 'Povinné pole';
+  else if (el.type === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) err = 'Zadejte platný e-mail';
+  else if (el.type === 'tel' && el.value && !/^\+?[\d\s\-]{9,15}$/.test(el.value)) err = 'Zadejte platný telefon';
+  group.classList.toggle('error', !!err);
+  const errEl = group.querySelector('.form-error-msg');
+  if (errEl) errEl.textContent = err;
+  return !err;
+}
+
+function initForms() {
+  const contact = document.getElementById('contact-form');
+  if (contact) {
+    contact.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      contact.querySelectorAll('input[required],select[required],textarea[required]').forEach(el => {
+        if (!validateField(el)) valid = false;
+      });
+      const gdpr = document.getElementById('gdpr');
+      if (gdpr && !gdpr.checked) { valid = false; }
+      if (!valid) return;
+      const btn = contact.querySelector('button[type=submit]') || contact.querySelector('button');
+      if (btn) btn.textContent = 'Odesílám…';
+      setTimeout(() => {
+        contact.style.display = 'none';
+        const succ = document.getElementById('contact-success');
+        if (succ) succ.style.display = 'block';
+      }, 1200);
+    });
+    contact.querySelectorAll('input,select,textarea').forEach(el => {
+      el.addEventListener('blur', () => validateField(el));
+    });
+  }
+
+  const sidebar = document.getElementById('sidebar-form');
+  if (sidebar) {
+    sidebar.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      sidebar.querySelectorAll('[required]').forEach(el => { if (!validateField(el)) valid = false; });
+      if (!valid) return;
+      const btn = sidebar.querySelector('button[type=submit]');
+      if (btn) btn.textContent = 'Odesílám…';
+      setTimeout(() => {
+        sidebar.style.display = 'none';
+        const succ = document.getElementById('sidebar-success');
+        if (succ) succ.style.display = 'block';
+      }, 1000);
+    });
+  }
+}
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════ */
+let revealObserver = null;
+function initReveal() {
+  if (revealObserver) revealObserver.disconnect();
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+
+/* ══════════════════════════════════════════
+   COUNTERS
+══════════════════════════════════════════ */
+function initCounters() {
+  const els = document.querySelectorAll('[data-counter]');
+  if (!els.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.counter);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  els.forEach(el => obs.observe(el));
+}
+
+/* ══════════════════════════════════════════
+   ACCORDION
+══════════════════════════════════════════ */
+function initAccordions() {
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.accordion-item');
+      const parent = item.closest('.accordion');
+      parent.querySelectorAll('.accordion-item').forEach(i => i !== item && i.classList.remove('open'));
+      item.classList.toggle('open');
+    });
+  });
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('mobileDrawer');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    drawer.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // Route — hash-based, default to home
+  dispatch(getCurrentPath());
+});
+</script>
+</body>
+</html>
